@@ -1,5 +1,8 @@
 .vs/
+bin/
+obj/
 Temp/
 Library/
-unity-editor-icons.sln
-unity-editor-icons.Editor.csproj
+icons/original/
+*.sln
+*.csproj
