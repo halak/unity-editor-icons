@@ -25,9 +25,9 @@ namespace Halak
 
             foreach (var assetName in editorAssetBundle.GetAllAssetNames())
             {
-                if (assetName.StartsWith(iconsPath, StringComparison.CurrentCultureIgnoreCase) == false)
+                if (assetName.StartsWith(iconsPath, StringComparison.OrdinalIgnoreCase) == false)
                     continue;
-                if (assetName.EndsWith(".png", StringComparison.CurrentCultureIgnoreCase) == false)
+                if (assetName.EndsWith(".png", StringComparison.OrdinalIgnoreCase) == false)
                     continue;
 
                 var icon = editorAssetBundle.LoadAsset<Texture2D>(assetName);
