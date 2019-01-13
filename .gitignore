@@ -1,8 +1,9 @@
 .vs/
 bin/
 obj/
-Temp/
 Library/
+Logs/
+Temp/
 icons/original/
 *.sln
 *.csproj

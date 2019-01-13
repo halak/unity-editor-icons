@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using UnityEngine;
@@ -50,6 +51,10 @@ namespace Halak
         [MenuItem("Unity Editor Icons/Generate README.md %g", priority = -1000)]
         private static void GenerateREADME()
         {
+            var guidMaterial = new Material(Shader.Find("Unlit/Texture"));
+            var guidMaterialId = "Assets/Editor/GuidMaterial.mat";
+            AssetDatabase.CreateAsset(guidMaterial, guidMaterialId);
+
             EditorUtility.DisplayProgressBar("Generate README.md", "Generating...", 0.0f);
             try
             {
@@ -59,16 +64,28 @@ namespace Halak
 
                 readmeContents.AppendLine($"Unity Editor Built-in Icons");
                 readmeContents.AppendLine($"==============================");
+                readmeContents.AppendLine($"Unity version: {Application.unityVersion}");
                 readmeContents.AppendLine($"Icons what can load using `EditorGUIUtility.IconContent`");
                 readmeContents.AppendLine();
-                readmeContents.AppendLine($"| Icon | Name |");
-                readmeContents.AppendLine($"|------|------|");
+                readmeContents.AppendLine($"File ID");
+                readmeContents.AppendLine($"-------------");
+                readmeContents.AppendLine($"You can change script icon by file id");
+                readmeContents.AppendLine($"1. Open `*.cs.meta` in Text Editor");
+                readmeContents.AppendLine($"2. Modify line `icons: {{instanceID: 0}}` to `icons: {{fileID: <FILE ID>, guid: 0000000000000000d000000000000000, type: 0}}`");
+                readmeContents.AppendLine($"3. Save and focus Unity Editor");
+                readmeContents.AppendLine();
+                readmeContents.AppendLine($"| Icon | Name | File ID |");
+                readmeContents.AppendLine($"|------|------|---------|");
 
-                foreach (var assetName in EnumerateIcons(editorAssetBundle, iconsPath))
+                var assetNames = EnumerateIcons(editorAssetBundle, iconsPath).ToArray();
+                for (var i = 0; i < assetNames.Length; i++)
                 {
+                    var assetName = assetNames[i];
                     var icon = editorAssetBundle.LoadAsset<Texture2D>(assetName);
                     if (icon == null)
                         continue;
+
+                    EditorUtility.DisplayProgressBar("Generate README.md", $"Generating... ({i + 1}/{assetNames.Length})", (float)i / assetNames.Length);
 
                     var readableTexture = new Texture2D(icon.width, icon.height, icon.format, icon.mipmapCount > 1);
 
@@ -81,8 +98,14 @@ namespace Halak
                     var iconPath = Path.Combine(folderPath, icon.name + ".png");
                     File.WriteAllBytes(iconPath, readableTexture.EncodeToPNG());
 
+                    //
+                    guidMaterial.mainTexture = icon;
+                    EditorUtility.SetDirty(guidMaterial);
+                    AssetDatabase.SaveAssets();
+                    var fileId = GetFileId(guidMaterialId);
+
                     var escapedUrl = iconPath.Replace(" ", "%20").Replace('\\', '/');
-                    readmeContents.AppendLine($"| ![]({escapedUrl}) | `{icon.name}` |");
+                    readmeContents.AppendLine($"| ![]({escapedUrl}) | `{icon.name}` | `{fileId}` |");
                 }
 
                 File.WriteAllText("README.md", readmeContents.ToString());
@@ -92,6 +115,7 @@ namespace Halak
             finally
             {
                 EditorUtility.ClearProgressBar();
+                AssetDatabase.DeleteAsset(guidMaterialId);
             }
         }
 
@@ -109,6 +133,19 @@ namespace Halak
             }
         }
 
+        private static string GetFileId(string proxyAssetPath)
+        {
+            var serializedAsset = File.ReadAllText(proxyAssetPath);
+            var index = serializedAsset.IndexOf("_MainTex:", StringComparison.Ordinal);
+            if (index == -1)
+                return string.Empty;
+
+            const string FileId = "fileID:";
+            var startIndex = serializedAsset.IndexOf(FileId, index) + FileId.Length;
+            var endIndex = serializedAsset.IndexOf(',', startIndex);
+            return serializedAsset.Substring(startIndex, endIndex - startIndex).Trim();
+        }
+
         private static AssetBundle GetEditorAssetBundle()
         {
             var editorGUIUtility = typeof(EditorGUIUtility);
@@ -121,6 +158,9 @@ namespace Halak
 
         private static string GetIconsPath()
         {
+#if UNITY_2018_3_OR_NEWER
+            return UnityEditor.Experimental.EditorResources.iconsPath;
+#else
             var assembly = typeof(EditorGUIUtility).Assembly;
             var editorResourcesUtility = assembly.GetType("UnityEditorInternal.EditorResourcesUtility");
 
@@ -129,6 +169,7 @@ namespace Halak
                 BindingFlags.Static | BindingFlags.Public);
 
             return (string)iconsPathProperty.GetValue(null, new object[] { });
+#endif
         }
     }
 }
