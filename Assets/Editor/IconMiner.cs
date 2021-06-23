@@ -4,8 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using UnityEngine;
 using UnityEditor;
+using UnityEditor.Experimental;
+using UnityEngine;
 
 namespace Halak
 {
@@ -20,23 +21,9 @@ namespace Halak
                 var editorAssetBundle = GetEditorAssetBundle();
                 var iconsPath = GetIconsPath();
                 var count = 0;
-                foreach (var assetName in EnumerateIcons(editorAssetBundle, iconsPath))
+                foreach (var (iconBundleName, icon) in GetAllIcons(editorAssetBundle, iconsPath))
                 {
-                    var icon = editorAssetBundle.LoadAsset<Texture2D>(assetName);
-                    if (icon == null)
-                        continue;
-
-                    var readableTexture = new Texture2D(icon.width, icon.height, icon.format, icon.mipmapCount > 1);
-
-                    Graphics.CopyTexture(icon, readableTexture);
-
-                    var folderPath = Path.GetDirectoryName(Path.Combine("icons/original/", assetName.Substring(iconsPath.Length)));
-                    if (Directory.Exists(folderPath) == false)
-                        Directory.CreateDirectory(folderPath);
-
-                    var iconPath = Path.Combine(folderPath, icon.name + ".png");
-                    File.WriteAllBytes(iconPath, readableTexture.EncodeToPNG());
-
+                    ExportIcon("icons/original/", icon);
                     count++;
                 }
 
@@ -46,6 +33,23 @@ namespace Halak
             {
                 EditorUtility.ClearProgressBar();
             }
+        }
+
+        private static string ExportIcon(string directory, Texture2D icon)
+        {
+            if (!Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
+            var iconPath = Path.Combine(directory, icon.name + ".png");
+
+            File.WriteAllBytes(iconPath, EncodeIconToPNG(icon));
+            return iconPath;
+        }
+
+        private static byte[] EncodeIconToPNG(Texture2D icon)
+        {
+            var readableTexture = new Texture2D(icon.width, icon.height, icon.format, icon.mipmapCount > 1);
+            Graphics.CopyTexture(icon, readableTexture);
+            return readableTexture.EncodeToPNG();
         }
 
         [MenuItem("Unity Editor Icons/Generate README.md %g", priority = -1000)]
@@ -62,55 +66,43 @@ namespace Halak
                 var iconsPath = GetIconsPath();
                 var readmeContents = new StringBuilder();
 
-                readmeContents.AppendLine($"Unity Editor Built-in Icons");
-                readmeContents.AppendLine($"==============================");
+                readmeContents.AppendLine("Unity Editor Built-in Icons");
+                readmeContents.AppendLine("==============================");
                 readmeContents.AppendLine($"Unity version: {Application.unityVersion}");
-                readmeContents.AppendLine($"Icons what can load using `EditorGUIUtility.IconContent`");
+                readmeContents.AppendLine("Icons what can load using `EditorGUIUtility.IconContent`");
                 readmeContents.AppendLine();
-                readmeContents.AppendLine($"File ID");
-                readmeContents.AppendLine($"-------------");
-                readmeContents.AppendLine($"You can change script icon by file id");
-                readmeContents.AppendLine($"1. Open `*.cs.meta` in Text Editor");
-                readmeContents.AppendLine($"2. Modify line `icon: {{instanceID: 0}}` to `icon: {{fileID: <FILE ID>, guid: 0000000000000000d000000000000000, type: 0}}`");
-                readmeContents.AppendLine($"3. Save and focus Unity Editor");
+                readmeContents.AppendLine("File ID");
+                readmeContents.AppendLine("-------------");
+                readmeContents.AppendLine("You can change script icon by file id");
+                readmeContents.AppendLine("1. Open `*.cs.meta` in Text Editor");
+                readmeContents.AppendLine(
+                    "2. Modify line `icon: {instanceID: 0}` to `icon: {fileID: <FILE ID>, guid: 0000000000000000d000000000000000, type: 0}`");
+                readmeContents.AppendLine("3. Save and focus Unity Editor");
                 readmeContents.AppendLine();
-                readmeContents.AppendLine($"| Icon | Name | File ID |");
-                readmeContents.AppendLine($"|------|------|---------|");
+                readmeContents.AppendLine("| Icon | Name | File ID |");
+                readmeContents.AppendLine("|------|------|---------|");
 
-                var assetNames = EnumerateIcons(editorAssetBundle, iconsPath).ToArray();
-                for (var i = 0; i < assetNames.Length; i++)
+                var icons = GetAllIcons(editorAssetBundle, iconsPath).ToArray();
+                for (var i = 0; i < icons.Length; i++)
                 {
-                    var assetName = assetNames[i];
-                    var icon = editorAssetBundle.LoadAsset<Texture2D>(assetName);
-                    if (icon == null)
-                        continue;
+                    var (iconName, iconTexture) = icons[i];
+                    EditorUtility.DisplayProgressBar("Generate README.md",
+                        $"Generating... ({i + 1}/{icons.Length})", (float) i / icons.Length);
 
-                    EditorUtility.DisplayProgressBar("Generate README.md", $"Generating... ({i + 1}/{assetNames.Length})", (float)i / assetNames.Length);
+                    var iconPath = ExportIcon("icons/small/", iconTexture);
 
-                    var readableTexture = new Texture2D(icon.width, icon.height, icon.format, icon.mipmapCount > 1);
-
-                    Graphics.CopyTexture(icon, readableTexture);
-
-                    var folderPath = Path.GetDirectoryName(Path.Combine("icons/small/", assetName.Substring(iconsPath.Length)));
-                    if (Directory.Exists(folderPath) == false)
-                        Directory.CreateDirectory(folderPath);
-
-                    var iconPath = Path.Combine(folderPath, icon.name + ".png");
-                    File.WriteAllBytes(iconPath, readableTexture.EncodeToPNG());
-
-                    //
-                    guidMaterial.mainTexture = icon;
+                    guidMaterial.mainTexture = iconTexture;
                     EditorUtility.SetDirty(guidMaterial);
                     AssetDatabase.SaveAssets();
                     var fileId = GetFileId(guidMaterialId);
 
                     var escapedUrl = iconPath.Replace(" ", "%20").Replace('\\', '/');
-                    readmeContents.AppendLine($"| ![]({escapedUrl}) | `{icon.name}` | `{fileId}` |");
+                    readmeContents.AppendLine($"| ![]({escapedUrl}) | `{iconTexture.name}` | `{fileId}` |");
                 }
 
                 File.WriteAllText("README.md", readmeContents.ToString());
 
-                Debug.Log($"'READMD.md' has been generated.");
+                Debug.Log("'READMD.md' has been generated.");
             }
             finally
             {
@@ -119,18 +111,16 @@ namespace Halak
             }
         }
 
-        private static IEnumerable<string> EnumerateIcons(AssetBundle editorAssetBundle, string iconsPath)
+        private static IEnumerable<(string name, Texture2D texture)> GetAllIcons(AssetBundle editorAssetBundle,
+            string iconsPath)
         {
-            foreach (var assetName in editorAssetBundle.GetAllAssetNames())
-            {
-                if (assetName.StartsWith(iconsPath, StringComparison.OrdinalIgnoreCase) == false)
-                    continue;
-                if (assetName.EndsWith(".png", StringComparison.OrdinalIgnoreCase) == false &&
-                    assetName.EndsWith(".asset", StringComparison.OrdinalIgnoreCase) == false)
-                    continue;
-
-                yield return assetName;
-            }
+            const StringComparison comparison = StringComparison.OrdinalIgnoreCase;
+            return from name in editorAssetBundle.GetAllAssetNames()
+                where name.StartsWith(iconsPath, comparison)
+                where name.EndsWith(".png", comparison) || name.EndsWith(".asset", comparison)
+                let tex = editorAssetBundle.LoadAsset<Texture2D>(name)
+                where tex != null
+                select (name, tex);
         }
 
         private static string GetFileId(string proxyAssetPath)
@@ -153,13 +143,13 @@ namespace Halak
                 "GetEditorAssetBundle",
                 BindingFlags.NonPublic | BindingFlags.Static);
 
-            return (AssetBundle)getEditorAssetBundle.Invoke(null, new object[] { });
+            return (AssetBundle) getEditorAssetBundle.Invoke(null, new object[] { });
         }
 
         private static string GetIconsPath()
         {
 #if UNITY_2018_3_OR_NEWER
-            return UnityEditor.Experimental.EditorResources.iconsPath;
+            return EditorResources.iconsPath;
 #else
             var assembly = typeof(EditorGUIUtility).Assembly;
             var editorResourcesUtility = assembly.GetType("UnityEditorInternal.EditorResourcesUtility");
