@@ -41,25 +41,12 @@ namespace Halak
             EditorUtility.DisplayProgressBar("Generate README.md", "Generating...", 0.0f);
             try
             {
-                var editorAssetBundle = GetEditorAssetBundle();
-                var iconsPath = AssetDatabaseUtil.GetIconsPath();
+                var template = Resources.Load<TextAsset>("Template").text;
+                template = template.Replace("<UnityVersion>", Application.unityVersion);
+                
                 var readmeContents = new StringBuilder();
+                readmeContents.AppendLine(template);
 
-                readmeContents.AppendLine("Unity Editor Built-in Icons");
-                readmeContents.AppendLine("==============================");
-                readmeContents.AppendLine($"Unity version: {Application.unityVersion}");
-                readmeContents.AppendLine("Icons what can load using `EditorGUIUtility.IconContent`");
-                readmeContents.AppendLine();
-                readmeContents.AppendLine("File ID");
-                readmeContents.AppendLine("-------------");
-                readmeContents.AppendLine("You can change script icon by file id");
-                readmeContents.AppendLine("1. Open `*.cs.meta` in Text Editor");
-                readmeContents.AppendLine(
-                    "2. Modify line `icon: {instanceID: 0}` to `icon: {fileID: <FILE ID>, guid: 0000000000000000d000000000000000, type: 0}`");
-                readmeContents.AppendLine("3. Save and focus Unity Editor");
-                readmeContents.AppendLine();
-                readmeContents.AppendLine("| Icon | Name | File ID |");
-                readmeContents.AppendLine("|------|------|---------|");
                 var icons = GetAllIcons(GetEditorAssetBundle()).ToArray();
                 for (var i = 0; i < icons.Length; i++)
                 {
