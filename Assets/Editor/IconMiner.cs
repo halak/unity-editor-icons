@@ -7,6 +7,7 @@ using System.Text;
 using UnityEditor;
 using UnityEditor.Experimental;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Halak
 {
@@ -19,7 +20,7 @@ namespace Halak
             try
             {
                 var editorAssetBundle = GetEditorAssetBundle();
-                var iconsPath = GetIconsPath();
+                var iconsPath = AssetDatabaseUtil.GetIconsPath();
                 var count = 0;
                 foreach (var (iconBundleName, icon) in GetAllIcons(editorAssetBundle, iconsPath))
                 {
@@ -49,21 +50,20 @@ namespace Halak
         {
             var readableTexture = new Texture2D(icon.width, icon.height, icon.format, icon.mipmapCount > 1);
             Graphics.CopyTexture(icon, readableTexture);
+            
             return readableTexture.EncodeToPNG();
         }
 
         [MenuItem("Unity Editor Icons/Generate README.md %g", priority = -1000)]
         private static void GenerateREADME()
         {
-            var guidMaterial = new Material(Shader.Find("Unlit/Texture"));
-            var guidMaterialId = "Assets/Editor/GuidMaterial.mat";
-            AssetDatabase.CreateAsset(guidMaterial, guidMaterialId);
+            var watch = System.Diagnostics.Stopwatch.StartNew();
 
             EditorUtility.DisplayProgressBar("Generate README.md", "Generating...", 0.0f);
             try
             {
                 var editorAssetBundle = GetEditorAssetBundle();
-                var iconsPath = GetIconsPath();
+                var iconsPath = AssetDatabaseUtil.GetIconsPath();
                 var readmeContents = new StringBuilder();
 
                 readmeContents.AppendLine("Unity Editor Built-in Icons");
@@ -91,23 +91,21 @@ namespace Halak
 
                     var iconPath = ExportIcon("icons/small/", iconTexture);
 
-                    guidMaterial.mainTexture = iconTexture;
-                    EditorUtility.SetDirty(guidMaterial);
-                    AssetDatabase.SaveAssets();
-                    var fileId = GetFileId(guidMaterialId);
-
+                    var fileId = AssetDatabaseUtil.GetFileId(iconTexture);
                     var escapedUrl = iconPath.Replace(" ", "%20").Replace('\\', '/');
                     readmeContents.AppendLine($"| ![]({escapedUrl}) | `{iconTexture.name}` | `{fileId}` |");
                 }
 
                 File.WriteAllText("README.md", readmeContents.ToString());
 
-                Debug.Log("'READMD.md' has been generated.");
+                Debug.Log($"'READMD.md' has been generated.");
             }
             finally
             {
                 EditorUtility.ClearProgressBar();
-                AssetDatabase.DeleteAsset(guidMaterialId);
+                watch.Stop();
+                var elapsed = watch.Elapsed;
+                Debug.Log($"Done in: {elapsed}");
             }
         }
 
@@ -123,19 +121,6 @@ namespace Halak
                 select (name, tex);
         }
 
-        private static string GetFileId(string proxyAssetPath)
-        {
-            var serializedAsset = File.ReadAllText(proxyAssetPath);
-            var index = serializedAsset.IndexOf("_MainTex:", StringComparison.Ordinal);
-            if (index == -1)
-                return string.Empty;
-
-            const string FileId = "fileID:";
-            var startIndex = serializedAsset.IndexOf(FileId, index) + FileId.Length;
-            var endIndex = serializedAsset.IndexOf(',', startIndex);
-            return serializedAsset.Substring(startIndex, endIndex - startIndex).Trim();
-        }
-
         private static AssetBundle GetEditorAssetBundle()
         {
             var editorGUIUtility = typeof(EditorGUIUtility);
@@ -145,8 +130,25 @@ namespace Halak
 
             return (AssetBundle) getEditorAssetBundle.Invoke(null, new object[] { });
         }
+    }
 
-        private static string GetIconsPath()
+    public static class AssetDatabaseUtil
+    {
+        private static readonly PropertyInfo InspectorModeInfo = typeof(SerializedObject).GetProperty("inspectorMode", BindingFlags.NonPublic | BindingFlags.Instance);
+        private const string FileIdFieldName ="m_LocalIdentfierInFile";  //note the misspelling!
+        public static long GetFileId(Object obj)
+        {
+#if UNITY_2018_1_OR_NEWER && false
+            AssetDatabase.TryGetGUIDAndLocalFileIdentifier(obj, out _, out long fileId);
+            return fileId;
+#else
+            var serializedObject = new SerializedObject(obj);
+            InspectorModeInfo.SetValue(serializedObject, InspectorMode.Debug);
+            return  serializedObject.FindProperty(FileIdFieldName).longValue;
+#endif
+        }
+        
+        public static string GetIconsPath()
         {
 #if UNITY_2018_3_OR_NEWER
             return EditorResources.iconsPath;
