@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.quickeye.editor-icon-browser": {
+      "version": "file:com.quickeye.icon-browser",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 2,

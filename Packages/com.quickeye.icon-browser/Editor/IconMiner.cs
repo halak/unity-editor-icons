@@ -2,9 +2,9 @@
 using System.Text;
 using UnityEditor;
 using UnityEngine;
-using static Halak.AssetDatabaseUtil;
+using static QuickEye.Editor.AssetDatabaseUtil;
 
-namespace Halak
+namespace QuickEye.Editor
 {
     public static class IconMiner
     {

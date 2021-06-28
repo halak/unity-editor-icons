@@ -7,7 +7,7 @@ using UnityEditor.Experimental;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Halak
+namespace QuickEye.Editor
 {
     public static class AssetDatabaseUtil
     {
@@ -37,7 +37,7 @@ namespace Halak
                 "GetEditorAssetBundle",
                 BindingFlags.NonPublic | BindingFlags.Static);
 
-            return (AssetBundle) getEditorAssetBundle.Invoke(null, new object[] { });
+            return (AssetBundle) getEditorAssetBundle.Invoke(null, null);
         }
 
         public static long GetFileId(Object obj)
