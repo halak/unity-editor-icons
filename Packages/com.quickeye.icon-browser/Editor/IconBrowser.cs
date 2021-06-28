@@ -21,9 +21,9 @@ namespace QuickEye.Editor
         private Vector2 scrollPos;
         private SearchField searchField;
         private Texture2D[] searchResult;
-        private string searchText;
+        private string searchString;
         private float iconSize = 40;
-        private bool HasSearch => !string.IsNullOrWhiteSpace(searchText);
+        private bool HasSearch => !string.IsNullOrWhiteSpace(searchString);
 
         [SerializeField]
         private Sorting sortingMode;
@@ -49,7 +49,7 @@ namespace QuickEye.Editor
             {
                 using (var s = new EditorGUI.ChangeCheckScope())
                 {
-                    searchText = searchField.OnToolbarGUI(searchText, MaxWidth(200));
+                    searchString = searchField.OnToolbarGUI(searchString, MaxWidth(200));
                     if (s.changed)
                         UpdateBySearch();
                 }
@@ -123,7 +123,13 @@ namespace QuickEye.Editor
 
         private void UpdateBySearch()
         {
-            searchResult = icons.Where(i => i.name.Contains(searchText.ToLower())).ToArray();
+            searchResult = (from icon in icons
+                    let lowerName = icon.name.ToLower()
+                    let lowerSearch = searchString.ToLower()
+                    where lowerName.Contains(lowerSearch)
+                    orderby lowerName.IndexOf(lowerSearch)
+                    select icon
+                ).ToArray();
         }
 
         private static (float h, float s, float v) GetIconAverageHSV(Texture2D icon)
@@ -164,7 +170,6 @@ namespace QuickEye.Editor
                             }
                         }
                     }
-
                 scrollPos = s.scrollPosition;
             }
         }
