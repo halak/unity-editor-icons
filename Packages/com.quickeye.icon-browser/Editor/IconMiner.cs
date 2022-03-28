@@ -17,8 +17,8 @@ namespace QuickEye.Editor
                 var icons = GetAllEditorIcons();
                 for (var i = 0; i < icons.Length; i++)
                 {
-                    TextureUtils.ExportIconToDir("icons/original/", icons[i]);
-                    EditorUtility.DisplayProgressBar("Export Icons", "Exporting...", (float) i / icons.Length);
+                    TextureUtils.ExportIconToDir("icons/original/", icons[i], false);
+                    EditorUtility.DisplayProgressBar("Export Icons", "Exporting...", (float)i / icons.Length);
                 }
 
                 Debug.Log($"{icons.Length} icons has been exported!");
@@ -28,7 +28,6 @@ namespace QuickEye.Editor
                 EditorUtility.ClearProgressBar();
             }
         }
-
 
 
         [MenuItem("Unity Editor Icons/Generate README.md %g", priority = -1000)]
@@ -48,9 +47,9 @@ namespace QuickEye.Editor
                 {
                     var icon = icons[i];
                     EditorUtility.DisplayProgressBar("Generate README.md",
-                        $"Generating... ({i + 1}/{icons.Length})", (float) i / icons.Length);
+                        $"Generating... ({i + 1}/{icons.Length})", (float)i / icons.Length);
 
-                    var iconPath = TextureUtils.ExportIconToDir("icons/small/", icon);
+                    var iconPath = TextureUtils.ExportIconToDir("icons/small/", icon, true);
 
                     var fileId = GetFileId(icon);
                     var escapedUrl = iconPath.Replace(" ", "%20").Replace('\\', '/');

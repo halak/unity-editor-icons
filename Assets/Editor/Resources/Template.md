@@ -1,6 +1,5 @@
 # Unity Editor Built-in Icons
-![Window/Icon Browser](ToolImage.png)
-
+![Window/Icon Browser](/Documentation~/ToolImage.png)
 Unity version: <UnityVersion>
 
 Icons what can load using `EditorGUIUtility.IconContent`

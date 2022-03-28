@@ -39,7 +39,7 @@ namespace QuickEye.Editor
 
         [SerializeField]
         private Layout layout;
-        
+
         [SerializeField]
         private IconFilter filter;
 
@@ -108,6 +108,10 @@ namespace QuickEye.Editor
                         ExportSelectedIcon();
                     if (Button("Icon Content"))
                         CopyToClipboard("Icon Content", $"EditorGUIUtility.IconContent(\"{selectedItem.name}\")");
+                    if (debugMode && Button("Debug Export"))
+                    {
+                        TextureUtils.DebugExport(selectedItem.icon);
+                    }
                 }
             }
 
@@ -250,6 +254,7 @@ namespace QuickEye.Editor
                 IconSizeSlider();
             }
         }
+
         private void IconSizeSlider()
         {
             iconSize = HorizontalSlider(iconSize, iconSizeLimit.min, iconSizeLimit.max, MaxWidth(100),
