@@ -1,7 +1,7 @@
 {
-  "name": "com.quickeye.editor-icon-browser",
+  "name": "com.quickeye.icon-browser",
   "displayName": "Editor Icon Browser",
-  "author": "Ernest Suryś",
+  "author": "Ernest Sury\u015b",
   "version": "0.1.0",
   "unity": "2017.1",
   "type": "library"
