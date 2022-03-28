@@ -9,11 +9,12 @@ namespace QuickEye.Editor
     [Flags]
     public enum IconFilter
     {
-        Everything = 0,
+        None = 0,
+        Everything = ~0,
         AlternativeSkin = 1,
         SmallerVersions = 2,
     }
-
+[Serializable]
     public class IconBrowserDatabase
     {
         private static string[] iconBlacklist =

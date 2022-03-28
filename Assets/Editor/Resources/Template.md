@@ -2,7 +2,7 @@
 ![Window/Icon Browser](/Documentation~/ToolImage.png)
 Unity version: <UnityVersion>
 
-Icons what can load using `EditorGUIUtility.IconContent`
+Icons that you can load using `EditorGUIUtility.IconContent`
 
 ## File ID
 

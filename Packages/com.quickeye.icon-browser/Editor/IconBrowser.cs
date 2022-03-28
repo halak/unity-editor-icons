@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 
 namespace QuickEye.Editor
 {
-    // add toggle to hiding alternative skin icons?
     public class IconBrowser : EditorWindow, IHasCustomMenu
     {
         [MenuItem("Window/Icon Browser")]
@@ -54,6 +53,7 @@ namespace QuickEye.Editor
 
         private SearchField searchField;
         private IconBrowserDatabase database;
+
         private Rect sortingButtonRect, filterButtonRect;
         private float iconSize = 40;
         private readonly (float min, float max) iconSizeLimit = (16, 60);
@@ -313,15 +313,22 @@ namespace QuickEye.Editor
             if (Button(EditorGUIUtility.IconContent("Filter Icon"), EditorStyles.toolbarDropDown, Width(35)))
             {
                 var menu = new GenericMenu();
+                AddContextMenuItem("No Filters", IconFilter.None);
                 AddContextMenuItem("Alternative Skin", IconFilter.AlternativeSkin);
                 AddContextMenuItem("Smaller Sizes", IconFilter.SmallerVersions);
                 menu.DropDown(filterButtonRect);
 
                 void AddContextMenuItem(string label, IconFilter filterToToggle)
                 {
-                    menu.AddItem(new GUIContent(label), filter.HasFlag(filterToToggle), () =>
+                    var isOn = filterToToggle == IconFilter.None
+                        ? filter == IconFilter.None
+                        : filter.HasFlag(filterToToggle);
+                    menu.AddItem(new GUIContent(label), isOn, () =>
                     {
-                        filter ^= filterToToggle;
+                        if (filterToToggle == IconFilter.None)
+                            filter = IconFilter.None;
+                        else
+                            filter ^= filterToToggle;
                         UpdateFilterAndSearch();
                     });
                 }
@@ -334,6 +341,7 @@ namespace QuickEye.Editor
         private void UpdateFilterAndSearch()
         {
             database.UpdateByFilter(filter);
+            Sort(sortingMode);
             database.UpdateBySearch(searchString);
         }
 
