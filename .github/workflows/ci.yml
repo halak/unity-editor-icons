@@ -1,0 +1,17 @@
+name: CI
+on:
+  push:
+    branches: [ release ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.1.5
+
+      - name: Create a package commit
+        run: . ./.github/workflows/ci.ps1
+        shell: pwsh

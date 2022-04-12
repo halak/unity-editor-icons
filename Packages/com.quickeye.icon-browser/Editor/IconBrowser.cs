@@ -249,6 +249,7 @@ namespace QuickEye.Editor
                 ViewModeButton();
                 BackgroundToggle();
                 FilterButton();
+                Space(2);
                 SearchField();
                 FlexibleSpace();
                 IconSizeSlider();
@@ -281,8 +282,7 @@ namespace QuickEye.Editor
 
         private void ViewModeButton()
         {
-            //var icon = layout == Layout.Grid ? "GridLayoutGroup Icon" : "VerticalLayoutGroup Icon";
-            var iconName = layout == Layout.Grid ? "GridView On" : "ListView On";
+            var iconName = Styles.GetLayoutIcon(layout);
             var iconContent = EditorGUIUtility.IconContent(iconName);
             using (KeepIconAspectRatio(iconContent.image, new Vector2(13, 13)))
                 if (Button(iconContent, EditorStyles.toolbarButton, Width(30)))
@@ -310,7 +310,7 @@ namespace QuickEye.Editor
 
         private void FilterButton()
         {
-            if (Button(EditorGUIUtility.IconContent("Filter Icon"), EditorStyles.toolbarDropDown, Width(35)))
+            if (Button(EditorGUIUtility.IconContent(Styles.FilterButtonIcon), EditorStyles.toolbarDropDown, Width(35)))
             {
                 var menu = new GenericMenu();
                 AddContextMenuItem("No Filters", IconFilter.None);
@@ -387,6 +387,8 @@ namespace QuickEye.Editor
 
         private static EditorGUIUtility.IconSizeScope KeepIconAspectRatio(Texture icon, Vector2 size)
         {
+            if (icon == null)
+                return new EditorGUIUtility.IconSizeScope(size);
             if (icon.width > icon.height)
             {
                 var r = icon.width / size.x;
@@ -442,6 +444,24 @@ namespace QuickEye.Editor
             {
                 alignment = TextAnchor.MiddleCenter
             };
+            
+            public const string FilterButtonIcon = 
+#if UNITY_2021_1_OR_NEWER
+                "Filter Icon";
+#else
+                "FilterByLabel";
+#endif
+
+            public static string GetLayoutIcon(Layout layout)
+            {
+                return layout == Layout.Grid
+#if UNITY_2021_1_OR_NEWER
+                ? "GridView On" : "ListView On";
+#else
+                    ? "GridLayoutGroup Icon"
+                    : "VerticalLayoutGroup Icon";
+#endif
+            }
         }
     }
 }

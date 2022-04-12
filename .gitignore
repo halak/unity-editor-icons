@@ -5,6 +5,7 @@ obj/
 Library/
 Logs/
 Temp/
+UserSettings/
 icons/original/
 *.sln
 *.csproj
