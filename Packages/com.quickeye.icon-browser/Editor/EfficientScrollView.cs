@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace QuickEye.Editor
+namespace QuickEye.Editor.IconWindow
 {
     [Serializable]
     public class EfficientScrollView

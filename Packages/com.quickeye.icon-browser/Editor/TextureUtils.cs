@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace QuickEye.Editor
+namespace QuickEye.Editor.IconWindow
 {
     public static class TextureUtils
     {

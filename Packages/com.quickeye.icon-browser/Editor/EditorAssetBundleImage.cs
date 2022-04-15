@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace QuickEye.Editor
+namespace QuickEye.Editor.IconWindow
 {
     [Serializable]
     public class EditorAssetBundleImage

@@ -6,39 +6,36 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-namespace QuickEye.Editor
+namespace QuickEye.Editor.IconWindow
 {
-    [Flags]
-    public enum IconFilter
-    {
-        None = 0,
-        Everything = ~0,
-        AlternativeSkin = 1,
-        RetinaVersions = 2,
-        OtherImages = 4
-    }
-
     [Serializable]
     public class IconBrowserDatabase
     {
-        private static string[] iconBlacklist =
+        private static string[] _iconBlacklist =
         {
             "StateMachineEditor.Background",
             "scene-template-empty-scene",
             "scene-template-2d-scene",
         };
 
-        private static string[] iconPathsBlacklist =
+        private static string[] _iconPathsBlacklist =
         {
-            "devicesimulator"
+            "devicesimulator",
+            "icons/avatarinspector",
+            "cursors",
+            "brushes",
+            "avatar"
         };
 
-        private EditorAssetBundleImage[] AllIcons;
-        private Dictionary<string, EditorAssetBundleImage> IconDictionary = new Dictionary<string, EditorAssetBundleImage>();
-        public EditorAssetBundleImage[] Icons;
-        public EditorAssetBundleImage[] SearchResult;
+        private EditorAssetBundleImage[] _allIcons;
 
-        private HashSet<EditorAssetBundleImage> darkSkinIcons, lightSkinIcons, retinaIcons, nonIconDirectoryImages;
+        private Dictionary<string, EditorAssetBundleImage> _iconDictionary =
+            new Dictionary<string, EditorAssetBundleImage>();
+
+        public EditorAssetBundleImage[] Icons { get; private set; }
+        public EditorAssetBundleImage[] SearchResult { get; private set; }
+
+        private HashSet<EditorAssetBundleImage> _darkSkinIcons, _lightSkinIcons, _retinaIcons, _nonIconDirectoryImages;
 
         public IconBrowserDatabase(string searchString)
         {
@@ -50,35 +47,34 @@ namespace QuickEye.Editor
 
         private void GetIcons()
         {
-            AllIcons = AssetDatabaseUtil.GetEditorAssetBundleImages()
-                .Where(i => !i.assetBundlePath.StartsWith("devicesimulator"))
-                .Where(i => !i.assetBundlePath.StartsWith("cursors"))
-                .Where(i => !i.assetBundlePath.StartsWith("brushes"))
-                .Where(i => !i.assetBundlePath.StartsWith("avatar"))
+            _allIcons = AssetDatabaseUtil.GetEditorAssetBundleImages()
+                .Where(i => _iconPathsBlacklist.All(p => !i.assetBundlePath.StartsWith(p)))
+                .Where(i => _iconBlacklist.All(n => i.name != n))
                 .Where(i => !i.name.ToLower().EndsWith(".small"))
                 .ToArray();
-            IconDictionary = AllIcons.ToDictionary(i => i.assetBundlePath, i => i);
-            
-            nonIconDirectoryImages = new HashSet<EditorAssetBundleImage>(AllIcons.Where(IsNonIconImage).ToArray());
-            darkSkinIcons = new HashSet<EditorAssetBundleImage>(AllIcons.Where(IsDarkSkinIcon).ToArray());
-            lightSkinIcons = new HashSet<EditorAssetBundleImage>(AllIcons.Where(IsLightSkinIcon).ToArray());
-            retinaIcons = new HashSet<EditorAssetBundleImage>(AllIcons.Where(IsRetinaIcon).ToArray());
+
+            _iconDictionary = _allIcons.ToDictionary(i => i.assetBundlePath, i => i);
+            _nonIconDirectoryImages =
+                new HashSet<EditorAssetBundleImage>(_allIcons.Where(IsNonIconImage).ToArray());
+            _darkSkinIcons = new HashSet<EditorAssetBundleImage>(_allIcons.Where(IsDarkSkinIcon).ToArray());
+            _lightSkinIcons = new HashSet<EditorAssetBundleImage>(_allIcons.Where(IsLightSkinIcon).ToArray());
+            _retinaIcons = new HashSet<EditorAssetBundleImage>(_allIcons.Where(IsRetinaIcon).ToArray());
 
             InjectHiRezIcons();
 
-            Icons = AllIcons;
+            Icons = _allIcons;
         }
 
         private void InjectHiRezIcons()
         {
-            foreach (var retinaIcon in retinaIcons)
+            foreach (var retinaIcon in _retinaIcons)
             {
                 var regularIconName = Path.GetFileNameWithoutExtension(retinaIcon.assetBundlePath);
                 regularIconName = regularIconName.Substring(0, retinaIcon.name.Length - 3);
                 regularIconName += Path.GetExtension(retinaIcon.assetBundlePath);
-                
-                var regularIconPath = Path.GetDirectoryName(retinaIcon.assetBundlePath)+$"/{regularIconName}";
-                if (IconDictionary.TryGetValue(regularIconPath, out var icon))
+
+                var regularIconPath = Path.GetDirectoryName(retinaIcon.assetBundlePath) + $"/{regularIconName}";
+                if (_iconDictionary.TryGetValue(regularIconPath, out var icon))
                     icon.AddRetinaTexture(retinaIcon);
             }
         }
@@ -91,7 +87,7 @@ namespace QuickEye.Editor
 
         private bool IsLightSkinIcon(EditorAssetBundleImage icon)
         {
-            return darkSkinIcons.Any(i => i.name == $"d_{icon.name}") ||
+            return _iconDictionary.ContainsKey($"d_{icon.name}") ||
                    DoesPathContainsFolder(icon.assetBundlePath, "light", "lightskin");
         }
 
@@ -99,7 +95,7 @@ namespace QuickEye.Editor
         {
             return Regex.IsMatch(icon.name, @".*@\dx");
         }
-        
+
         private bool IsNonIconImage(EditorAssetBundleImage img)
         {
             return !img.assetBundlePath.StartsWith("icon");
@@ -118,7 +114,7 @@ namespace QuickEye.Editor
         {
             Icons = (from icon in Icons
                     let hsv = GetIconAverageHSV(icon)
-                    orderby hsv.h, hsv.s, hsv.v
+                    orderby hsv.h, hsv.s, icon.name, hsv.v
                     select icon
                 ).ToArray();
         }
@@ -146,22 +142,22 @@ namespace QuickEye.Editor
         {
             if (filter == IconFilter.Everything)
             {
-                Icons = AllIcons;
+                this.Icons = _allIcons;
                 return;
             }
 
-            IEnumerable<EditorAssetBundleImage> icons = AllIcons;
+            IEnumerable<EditorAssetBundleImage> icons = _allIcons;
 
             if (!filter.HasFlag(IconFilter.AlternativeSkin))
                 icons = icons.Where(icon => EditorGUIUtility.isProSkin
-                    ? !lightSkinIcons.Contains(icon)
-                    : !darkSkinIcons.Contains(icon));
+                    ? !_lightSkinIcons.Contains(icon)
+                    : !_darkSkinIcons.Contains(icon));
 
             if (!filter.HasFlag(IconFilter.RetinaVersions))
-                icons = icons.Where(i=>!IsRetinaIcon(i));
+                icons = icons.Where(i => !IsRetinaIcon(i));
             if (!filter.HasFlag(IconFilter.OtherImages))
                 icons = icons.Where(i => !IsNonIconImage(i));
-            Icons = icons.ToArray();
+            this.Icons = icons.ToArray();
         }
 
         private static (float h, float s, float v) GetIconAverageHSV(EditorAssetBundleImage icon)
@@ -179,19 +175,29 @@ namespace QuickEye.Editor
         {
             var texColors = tex.GetPixels32();
             var total = texColors.Length;
-
+            var newTotal = total;
             float r = 0;
             float g = 0;
             float b = 0;
 
             for (var i = 0; i < total; i++)
             {
-                r += texColors[i].r;
-                g += texColors[i].g;
-                b += texColors[i].b;
+                if (texColors[i].a == 0)
+                {
+                    newTotal--;
+                    continue;
+                }
+
+                var mul = (float)texColors[i].a / 255;
+                r += texColors[i].r * mul;
+                g += texColors[i].g * mul;
+                b += texColors[i].b * mul;
             }
 
-            return new Color32((byte)(r / total), (byte)(g / total), (byte)(b / total), 255);
+            r /= newTotal;
+            g /= newTotal;
+            b /= newTotal;
+            return new Color32((byte)r, (byte)g, (byte)b, 255);
         }
     }
 }

@@ -2,10 +2,11 @@ using System;
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
-using static UnityEngine.GUILayout;
 using Random = UnityEngine.Random;
+using static UnityEngine.GUILayout;
+using static QuickEye.Editor.IconWindow.QuickEyeGUIUtility;
 
-namespace QuickEye.Editor
+namespace QuickEye.Editor.IconWindow
 {
     public class IconBrowser : EditorWindow, IHasCustomMenu
     {
@@ -16,19 +17,7 @@ namespace QuickEye.Editor
             w.titleContent.image = EditorGUIUtility.IconContent("Search Icon").image;
         }
 
-        private static readonly Color LightSkinColor = new Color32(194, 194, 194, 255);
-        private static readonly Color DarkSkinColor = new Color32(56, 56, 56, 255);
-        private static readonly Color HighlightColor = new Color32(255, 255, 255, 20);
         private const int ListIconPadding = 4;
-
-        private static Color BackgroundColor =>
-            EditorGUIUtility.isProSkin ? DarkSkinColor : LightSkinColor;
-
-        private static Color AlternativeSkinBackgroundColor =>
-            EditorGUIUtility.isProSkin ? LightSkinColor : DarkSkinColor;
-
-        private Color SelectedBackgroundColor =>
-            drawAlternativeBackground ? AlternativeSkinBackgroundColor : BackgroundColor;
 
         [SerializeField]
         private string searchString = "";
@@ -67,6 +56,8 @@ namespace QuickEye.Editor
         [SerializeField]
         private int _selectedIndex;
 
+        public Color SelectedBackgroundColor =>
+            drawAlternativeBackground ? Styles.AlternativeSkinBackgroundColor : Styles.BackgroundColor;
 
         private bool HasSearch => !string.IsNullOrWhiteSpace(searchString);
         private EditorAssetBundleImage[] Icons => HasSearch ? _database.SearchResult : _database.Icons;
@@ -86,6 +77,43 @@ namespace QuickEye.Editor
             DrawIcons();
             DrawFooter();
             DrawDebugView();
+        }
+
+        private void DrawToolbar()
+        {
+            using (new HorizontalScope(EditorStyles.toolbar, ExpandWidth(true)))
+            {
+                SortingButton();
+                ViewModeButton();
+                BackgroundToggle();
+                FilterButton();
+                Space(2);
+                SearchField();
+                IconCount();
+                FlexibleSpace();
+                IconSizeSlider();
+            }
+        }
+        
+        private void DrawIcons()
+        {
+            listView.RowCount = layout == Layout.List ? Icons.Length : GetGridRowCount();
+            var style = EditorStyles.label;
+            listView.ElementHeight = _iconSize + style.padding.vertical + style.margin.vertical;
+            if (drawAlternativeBackground)
+            {
+                var rect = layout == Layout.Grid
+                    ? listView.Position
+                    : new Rect(listView.Position)
+                    {
+                        width = _iconRectWidth,
+                    };
+
+                EditorGUI.DrawRect(rect, Styles.AlternativeSkinBackgroundColor);
+            }
+
+            listView.OnGUI();
+            ArrowNavigation();
         }
 
         private void ArrowNavigation()
@@ -237,7 +265,7 @@ namespace QuickEye.Editor
         {
             if (_selectedImage == icon)
             {
-                EditorGUI.DrawRect(rect, HighlightColor);
+                EditorGUI.DrawRect(rect, Styles.HighlightColor);
             }
         }
 
@@ -258,7 +286,7 @@ namespace QuickEye.Editor
                 var content =
                     new GUIContent(filter.HasFlag(IconFilter.RetinaVersions) ? icon.texture : icon.RetinaTexture);
 
-                using (KeepIconAspectRatio(icon, new Vector2(_iconSize, _iconSize)))
+                using (QuickEyeGUIUtility.KeepIconAspectRatio(icon, new Vector2(_iconSize, _iconSize)))
                 {
                     var buttonRect = new Rect();
                     buttonRect.width = buttonRect.height = _iconRectWidth;
@@ -290,22 +318,6 @@ namespace QuickEye.Editor
             {
                 var pos = new Vector2(i * _iconRectWidth, 0);
                 EditorGUI.DrawRect(new Rect(pos, new Vector2(_iconRectWidth, 5)), Random.ColorHSV());
-            }
-        }
-
-        private void DrawToolbar()
-        {
-            using (new HorizontalScope(EditorStyles.toolbar, ExpandWidth(true)))
-            {
-                SortingButton();
-                ViewModeButton();
-                BackgroundToggle();
-                FilterButton();
-                Space(2);
-                SearchField();
-                IconCount();
-                FlexibleSpace();
-                IconSizeSlider();
             }
         }
 
@@ -342,7 +354,7 @@ namespace QuickEye.Editor
         {
             var iconName = Styles.GetLayoutIcon(layout);
             var iconContent = EditorGUIUtility.IconContent(iconName);
-            using (KeepIconAspectRatio(iconContent.image, new Vector2(13, 13)))
+            using (QuickEyeGUIUtility.KeepIconAspectRatio(iconContent.image, new Vector2(13, 13)))
                 if (Button(iconContent, EditorStyles.toolbarButton, Width(30)))
                 {
                     layout = layout == Layout.Grid ? Layout.List : Layout.Grid;
@@ -419,48 +431,9 @@ namespace QuickEye.Editor
             }
         }
 
-        private void DrawIcons()
-        {
-            listView.RowCount = layout == Layout.List ? Icons.Length : GetGridRowCount();
-            var style = EditorStyles.label;
-            listView.ElementHeight = _iconSize + style.padding.vertical + style.margin.vertical;
-            if (drawAlternativeBackground)
-            {
-                var rect = layout == Layout.Grid
-                    ? listView.Position
-                    : new Rect(listView.Position)
-                    {
-                        width = _iconRectWidth,
-                    };
-
-                EditorGUI.DrawRect(rect, AlternativeSkinBackgroundColor);
-            }
-
-            listView.OnGUI();
-            ArrowNavigation();
-        }
-
         private void UpdateLayout()
         {
             listView.DrawElement = layout == Layout.Grid ? (Action<Rect, int>)DrawGridElement : DrawListElement;
-        }
-
-        private static EditorGUIUtility.IconSizeScope KeepIconAspectRatio(Texture icon, Vector2 size)
-        {
-            if (icon == null)
-                return new EditorGUIUtility.IconSizeScope(size);
-            if (icon.width > icon.height)
-            {
-                var r = icon.width / size.x;
-                size.y = icon.height / r;
-            }
-            else
-            {
-                var r = icon.height / size.y;
-                size.x = icon.width / r;
-            }
-
-            return new EditorGUIUtility.IconSizeScope(size);
         }
 
         [Serializable]
@@ -484,6 +457,23 @@ namespace QuickEye.Editor
 
         private static class Styles
         {
+            private static readonly Color LightSkinColor = new Color32(194, 194, 194, 255);
+            private static readonly Color DarkSkinColor = new Color32(56, 56, 56, 255);
+
+            public static Color HighlightColor => EditorGUIUtility.isProSkin
+                ? DarkHighlightColor
+                : LightHighlightColor;
+
+            private static readonly Color LightHighlightColor = new Color(0.227f, 0.447f, 0.69f, 0.6f);
+            private static readonly Color DarkHighlightColor = new Color(0.173f, 0.365f, 0.529f, 0.6f);
+
+            public static Color BackgroundColor =>
+                EditorGUIUtility.isProSkin ? DarkSkinColor : LightSkinColor;
+
+            public static Color AlternativeSkinBackgroundColor =>
+                EditorGUIUtility.isProSkin ? LightSkinColor : DarkSkinColor;
+
+
             public static readonly GUIStyle CenteredIcon = new GUIStyle("label")
             {
                 alignment = TextAnchor.MiddleCenter

@@ -6,7 +6,7 @@ using UnityEditor.Experimental;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace QuickEye.Editor
+namespace QuickEye.Editor.IconWindow
 {
     public static class AssetDatabaseUtil
     {
@@ -15,7 +15,6 @@ namespace QuickEye.Editor
         
         public static EditorAssetBundleImage[] GetEditorAssetBundleImages()
         {
-            const StringComparison comparison = StringComparison.OrdinalIgnoreCase;
             return (from path in EditorAssetBundle.GetAllAssetNames()
                 let tex = EditorAssetBundle.LoadAsset<Texture2D>(path)
                 where tex != null
