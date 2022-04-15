@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEditor;
@@ -14,26 +13,15 @@ namespace QuickEye.Editor
         public static readonly AssetBundle EditorAssetBundle = GetEditorAssetBundle();
         public static readonly string IconsPath = GetIconsPath();
         
-        public static Texture2D[] GetAllEditorIcons()
+        public static EditorAssetBundleImage[] GetEditorAssetBundleImages()
         {
             const StringComparison comparison = StringComparison.OrdinalIgnoreCase;
-            return (from name in EditorAssetBundle.GetAllAssetNames()
-                where name.StartsWith(IconsPath, comparison)
-                where name.EndsWith(".png", comparison) || name.EndsWith(".asset", comparison)
-                let tex = EditorAssetBundle.LoadAsset<Texture2D>(name)
+            return (from path in EditorAssetBundle.GetAllAssetNames()
+                let tex = EditorAssetBundle.LoadAsset<Texture2D>(path)
                 where tex != null
-                select tex).ToArray();
+                select new EditorAssetBundleImage(tex, path)).ToArray();
         }
-        public static (Texture2D tex, string path)[] GetAllEditorIconsWithSource()
-        {
-            const StringComparison comparison = StringComparison.OrdinalIgnoreCase;
-            return (from name in EditorAssetBundle.GetAllAssetNames()
-                where name.StartsWith(IconsPath, comparison)
-                where name.EndsWith(".png", comparison) || name.EndsWith(".asset", comparison)
-                let tex = EditorAssetBundle.LoadAsset<Texture2D>(name)
-                where tex != null
-                select (tex,name)).ToArray();
-        }
+        
         private static AssetBundle GetEditorAssetBundle()
         {
             var editorGUIUtility = typeof(EditorGUIUtility);

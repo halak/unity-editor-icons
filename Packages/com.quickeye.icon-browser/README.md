@@ -120,129 +120,101 @@ You can change script icon by file id
 | ![](Documentation~/icons/small/BuildSettings.Android%20On.png) | `BuildSettings.Android On` | `-1878890260662668789` |
 | ![](Documentation~/icons/small/BuildSettings.Android%20On@2x.png) | `BuildSettings.Android On@2x` | `16334440819132706` |
 | ![](Documentation~/icons/small/BuildSettings.Android.png) | `BuildSettings.Android` | `-3225301215205586114` |
-| ![](Documentation~/icons/small/BuildSettings.Android.Small.png) | `BuildSettings.Android.Small` | `-1166641788184234255` |
 | ![](Documentation~/icons/small/BuildSettings.Android.Small@2x.png) | `BuildSettings.Android.Small@2x` | `-5945452454175733588` |
 | ![](Documentation~/icons/small/BuildSettings.Android@2x.png) | `BuildSettings.Android@2x` | `5734965202261760406` |
 | ![](Documentation~/icons/small/BuildSettings.Broadcom.png) | `BuildSettings.Broadcom` | `-2611540343518146177` |
 | ![](Documentation~/icons/small/BuildSettings.DedicatedServer%20On.png) | `BuildSettings.DedicatedServer On` | `3297296290159596267` |
 | ![](Documentation~/icons/small/BuildSettings.DedicatedServer%20On@2x.png) | `BuildSettings.DedicatedServer On@2x` | `5919977954002937266` |
 | ![](Documentation~/icons/small/BuildSettings.DedicatedServer.png) | `BuildSettings.DedicatedServer` | `3815258833528828467` |
-| ![](Documentation~/icons/small/BuildSettings.DedicatedServer.Small.png) | `BuildSettings.DedicatedServer.Small` | `-7647273969673859249` |
 | ![](Documentation~/icons/small/BuildSettings.DedicatedServer.Small@2x.png) | `BuildSettings.DedicatedServer.Small@2x` | `-6058522490286245110` |
 | ![](Documentation~/icons/small/BuildSettings.DedicatedServer@2x.png) | `BuildSettings.DedicatedServer@2x` | `6769625271997971160` |
 | ![](Documentation~/icons/small/BuildSettings.Editor.png) | `BuildSettings.Editor` | `8400232691031406736` |
-| ![](Documentation~/icons/small/BuildSettings.Editor.Small.png) | `BuildSettings.Editor.Small` | `-6908710258048083175` |
 | ![](Documentation~/icons/small/BuildSettings.EmbeddedLinux%20On.png) | `BuildSettings.EmbeddedLinux On` | `7335244815113920615` |
 | ![](Documentation~/icons/small/BuildSettings.EmbeddedLinux%20On@2x.png) | `BuildSettings.EmbeddedLinux On@2x` | `1354193150461728072` |
 | ![](Documentation~/icons/small/BuildSettings.EmbeddedLinux.png) | `BuildSettings.EmbeddedLinux` | `-2896840256165816803` |
-| ![](Documentation~/icons/small/BuildSettings.EmbeddedLinux.Small.png) | `BuildSettings.EmbeddedLinux.Small` | `-3209210660937311089` |
 | ![](Documentation~/icons/small/BuildSettings.EmbeddedLinux.Small@2x.png) | `BuildSettings.EmbeddedLinux.Small@2x` | `-3888723655212919763` |
 | ![](Documentation~/icons/small/BuildSettings.EmbeddedLinux@2x.png) | `BuildSettings.EmbeddedLinux@2x` | `-2157157522209226451` |
 | ![](Documentation~/icons/small/BuildSettings.Facebook%20On.png) | `BuildSettings.Facebook On` | `-7859711678534788915` |
 | ![](Documentation~/icons/small/BuildSettings.Facebook%20On@2x.png) | `BuildSettings.Facebook On@2x` | `-1283358686002970987` |
 | ![](Documentation~/icons/small/BuildSettings.Facebook.png) | `BuildSettings.Facebook` | `-5485581235442607191` |
-| ![](Documentation~/icons/small/BuildSettings.Facebook.Small.png) | `BuildSettings.Facebook.Small` | `5439670708184688316` |
 | ![](Documentation~/icons/small/BuildSettings.Facebook.Small@2x.png) | `BuildSettings.Facebook.Small@2x` | `9115517695639967145` |
 | ![](Documentation~/icons/small/BuildSettings.Facebook@2x.png) | `BuildSettings.Facebook@2x` | `-2925270732012849750` |
 | ![](Documentation~/icons/small/BuildSettings.FlashPlayer.png) | `BuildSettings.FlashPlayer` | `466988226579792567` |
-| ![](Documentation~/icons/small/BuildSettings.FlashPlayer.Small.png) | `BuildSettings.FlashPlayer.Small` | `4366120842335875659` |
 | ![](Documentation~/icons/small/BuildSettings.GameCoreScarlett%20On.png) | `BuildSettings.GameCoreScarlett On` | `4032073047827678025` |
 | ![](Documentation~/icons/small/BuildSettings.GameCoreScarlett%20On@2x.png) | `BuildSettings.GameCoreScarlett On@2x` | `7612008437288004200` |
 | ![](Documentation~/icons/small/BuildSettings.GameCoreScarlett.png) | `BuildSettings.GameCoreScarlett` | `438378150247721864` |
-| ![](Documentation~/icons/small/BuildSettings.GameCoreScarlett.Small.png) | `BuildSettings.GameCoreScarlett.Small` | `-9179897014072820805` |
 | ![](Documentation~/icons/small/BuildSettings.GameCoreScarlett.Small@2x.png) | `BuildSettings.GameCoreScarlett.Small@2x` | `-7651910531202835751` |
 | ![](Documentation~/icons/small/BuildSettings.GameCoreScarlett@2x.png) | `BuildSettings.GameCoreScarlett@2x` | `-9106869091312449984` |
 | ![](Documentation~/icons/small/BuildSettings.GameCoreXboxOne%20On.png) | `BuildSettings.GameCoreXboxOne On` | `7548485100206320310` |
 | ![](Documentation~/icons/small/BuildSettings.GameCoreXboxOne%20On@2x.png) | `BuildSettings.GameCoreXboxOne On@2x` | `991673151852721335` |
 | ![](Documentation~/icons/small/BuildSettings.GameCoreXboxOne.png) | `BuildSettings.GameCoreXboxOne` | `3068716228704556637` |
-| ![](Documentation~/icons/small/BuildSettings.GameCoreXboxOne.Small.png) | `BuildSettings.GameCoreXboxOne.Small` | `4089031816727803355` |
 | ![](Documentation~/icons/small/BuildSettings.GameCoreXboxOne.Small@2x.png) | `BuildSettings.GameCoreXboxOne.Small@2x` | `2145091974174636302` |
 | ![](Documentation~/icons/small/BuildSettings.GameCoreXboxOne@2x.png) | `BuildSettings.GameCoreXboxOne@2x` | `7098168344539396557` |
 | ![](Documentation~/icons/small/BuildSettings.iPhone%20On.png) | `BuildSettings.iPhone On` | `5315025538136271434` |
 | ![](Documentation~/icons/small/BuildSettings.iPhone%20On@2x.png) | `BuildSettings.iPhone On@2x` | `3856988739857600585` |
 | ![](Documentation~/icons/small/BuildSettings.iPhone.png) | `BuildSettings.iPhone` | `3079519598310828125` |
-| ![](Documentation~/icons/small/BuildSettings.iPhone.Small.png) | `BuildSettings.iPhone.Small` | `4345870033486632634` |
 | ![](Documentation~/icons/small/BuildSettings.iPhone.Small@2x.png) | `BuildSettings.iPhone.Small@2x` | `-5634524864065029246` |
 | ![](Documentation~/icons/small/BuildSettings.iPhone@2x.png) | `BuildSettings.iPhone@2x` | `6987697712259842190` |
 | ![](Documentation~/icons/small/BuildSettings.Lumin%20On.png) | `BuildSettings.Lumin On` | `-7421784102139658696` |
 | ![](Documentation~/icons/small/BuildSettings.Lumin%20On@2x.png) | `BuildSettings.Lumin On@2x` | `2998448140356953732` |
 | ![](Documentation~/icons/small/BuildSettings.Lumin.png) | `BuildSettings.Lumin` | `-5215224591671759445` |
-| ![](Documentation~/icons/small/BuildSettings.Lumin.small.png) | `BuildSettings.Lumin.small` | `8979687790990599924` |
 | ![](Documentation~/icons/small/BuildSettings.Lumin.small@2x.png) | `BuildSettings.Lumin.small@2x` | `-731794183861421397` |
 | ![](Documentation~/icons/small/BuildSettings.Lumin@2x.png) | `BuildSettings.Lumin@2x` | `-5166817344748110915` |
 | ![](Documentation~/icons/small/BuildSettings.Metro%20On.png) | `BuildSettings.Metro On` | `3455818660745422868` |
 | ![](Documentation~/icons/small/BuildSettings.Metro%20On@2x.png) | `BuildSettings.Metro On@2x` | `6720285510691535691` |
 | ![](Documentation~/icons/small/BuildSettings.Metro.png) | `BuildSettings.Metro` | `-4021004726003450232` |
-| ![](Documentation~/icons/small/BuildSettings.Metro.Small.png) | `BuildSettings.Metro.Small` | `8056438331138731872` |
 | ![](Documentation~/icons/small/BuildSettings.Metro.Small@2x.png) | `BuildSettings.Metro.Small@2x` | `-8732235388156778990` |
 | ![](Documentation~/icons/small/BuildSettings.Metro@2x.png) | `BuildSettings.Metro@2x` | `-2311780035366954593` |
 | ![](Documentation~/icons/small/BuildSettings.N3DS%20On.png) | `BuildSettings.N3DS On` | `6165003963721005565` |
 | ![](Documentation~/icons/small/BuildSettings.N3DS%20On@2x.png) | `BuildSettings.N3DS On@2x` | `8791219912215951517` |
 | ![](Documentation~/icons/small/BuildSettings.N3DS.png) | `BuildSettings.N3DS` | `-5908170440005314456` |
-| ![](Documentation~/icons/small/BuildSettings.N3DS.Small.png) | `BuildSettings.N3DS.Small` | `-6066799282333214607` |
 | ![](Documentation~/icons/small/BuildSettings.N3DS.Small@2x.png) | `BuildSettings.N3DS.Small@2x` | `2057369963675073982` |
 | ![](Documentation~/icons/small/BuildSettings.N3DS@2x.png) | `BuildSettings.N3DS@2x` | `-6430829192587231253` |
 | ![](Documentation~/icons/small/BuildSettings.PS4%20On.png) | `BuildSettings.PS4 On` | `-2446513153997903262` |
 | ![](Documentation~/icons/small/BuildSettings.PS4%20On@2x.png) | `BuildSettings.PS4 On@2x` | `7838709373500781874` |
 | ![](Documentation~/icons/small/BuildSettings.PS4.png) | `BuildSettings.PS4` | `55494050528514414` |
-| ![](Documentation~/icons/small/BuildSettings.PS4.Small.png) | `BuildSettings.PS4.Small` | `2298978507677022530` |
 | ![](Documentation~/icons/small/BuildSettings.PS4.Small@2x.png) | `BuildSettings.PS4.Small@2x` | `-2413739408649156995` |
 | ![](Documentation~/icons/small/BuildSettings.PS4@2x.png) | `BuildSettings.PS4@2x` | `-6527979290361645938` |
 | ![](Documentation~/icons/small/BuildSettings.PS5%20On.png) | `BuildSettings.PS5 On` | `6012666984125897113` |
 | ![](Documentation~/icons/small/BuildSettings.PS5%20On@2x.png) | `BuildSettings.PS5 On@2x` | `5021112018744779014` |
 | ![](Documentation~/icons/small/BuildSettings.PS5.png) | `BuildSettings.PS5` | `-8144718789618191920` |
-| ![](Documentation~/icons/small/BuildSettings.PS5.Small.png) | `BuildSettings.PS5.Small` | `8521832537410238816` |
 | ![](Documentation~/icons/small/BuildSettings.PS5.Small@2x.png) | `BuildSettings.PS5.Small@2x` | `7719912845452673205` |
 | ![](Documentation~/icons/small/BuildSettings.PS5@2x.png) | `BuildSettings.PS5@2x` | `373751416080676096` |
 | ![](Documentation~/icons/small/BuildSettings.PSM.png) | `BuildSettings.PSM` | `-98090470861308492` |
-| ![](Documentation~/icons/small/BuildSettings.PSM.Small.png) | `BuildSettings.PSM.Small` | `-715787968158446526` |
 | ![](Documentation~/icons/small/BuildSettings.PSP2.png) | `BuildSettings.PSP2` | `9006858688270511880` |
-| ![](Documentation~/icons/small/BuildSettings.PSP2.Small.png) | `BuildSettings.PSP2.Small` | `-2257309162268670159` |
 | ![](Documentation~/icons/small/BuildSettings.SelectedIcon.png) | `BuildSettings.SelectedIcon` | `-3237302683924646227` |
 | ![](Documentation~/icons/small/BuildSettings.Stadia%20On.png) | `BuildSettings.Stadia On` | `-583410931937435233` |
 | ![](Documentation~/icons/small/BuildSettings.Stadia%20On@2x.png) | `BuildSettings.Stadia On@2x` | `-2427937019371804007` |
 | ![](Documentation~/icons/small/BuildSettings.Stadia.png) | `BuildSettings.Stadia` | `-1059611258551044968` |
-| ![](Documentation~/icons/small/BuildSettings.Stadia.small.png) | `BuildSettings.Stadia.small` | `-1982176944817373238` |
 | ![](Documentation~/icons/small/BuildSettings.Stadia.Small@2x.png) | `BuildSettings.Stadia.Small@2x` | `8703136191750934175` |
 | ![](Documentation~/icons/small/BuildSettings.Stadia@2x.png) | `BuildSettings.Stadia@2x` | `3805792301904044692` |
 | ![](Documentation~/icons/small/BuildSettings.Standalone%20On.png) | `BuildSettings.Standalone On` | `-8032632311582345015` |
 | ![](Documentation~/icons/small/BuildSettings.Standalone%20On@2x.png) | `BuildSettings.Standalone On@2x` | `4576219794024598259` |
 | ![](Documentation~/icons/small/BuildSettings.Standalone.png) | `BuildSettings.Standalone` | `-9041251142560793768` |
-| ![](Documentation~/icons/small/BuildSettings.Standalone.Small.png) | `BuildSettings.Standalone.Small` | `4297135980918140731` |
 | ![](Documentation~/icons/small/BuildSettings.Standalone.Small@2x.png) | `BuildSettings.Standalone.Small@2x` | `8897440368062136615` |
 | ![](Documentation~/icons/small/BuildSettings.Standalone@2x.png) | `BuildSettings.Standalone@2x` | `3214811950287853606` |
-| ![](Documentation~/icons/small/BuildSettings.StandaloneBroadcom.Small.png) | `BuildSettings.StandaloneBroadcom.Small` | `-8905343430035773069` |
-| ![](Documentation~/icons/small/BuildSettings.StandaloneGLES20Emu.Small.png) | `BuildSettings.StandaloneGLES20Emu.Small` | `2723429009875258330` |
 | ![](Documentation~/icons/small/BuildSettings.StandaloneGLESEmu.png) | `BuildSettings.StandaloneGLESEmu` | `-1310285349776098935` |
-| ![](Documentation~/icons/small/BuildSettings.StandaloneGLESEmu.Small.png) | `BuildSettings.StandaloneGLESEmu.Small` | `6677928742535971017` |
 | ![](Documentation~/icons/small/BuildSettings.Switch%20On.png) | `BuildSettings.Switch On` | `5706999980759659277` |
 | ![](Documentation~/icons/small/BuildSettings.Switch%20On@2x.png) | `BuildSettings.Switch On@2x` | `-61262952020375652` |
 | ![](Documentation~/icons/small/BuildSettings.Switch.png) | `BuildSettings.Switch` | `5517785097875794962` |
-| ![](Documentation~/icons/small/BuildSettings.Switch.Small.png) | `BuildSettings.Switch.Small` | `8765560747129780117` |
 | ![](Documentation~/icons/small/BuildSettings.Switch.Small@2x.png) | `BuildSettings.Switch.Small@2x` | `-3990060041231824171` |
 | ![](Documentation~/icons/small/BuildSettings.Switch@2x.png) | `BuildSettings.Switch@2x` | `4203361953608673628` |
 | ![](Documentation~/icons/small/BuildSettings.tvOS%20On.png) | `BuildSettings.tvOS On` | `-1883590773550481976` |
 | ![](Documentation~/icons/small/BuildSettings.tvOS%20On@2x.png) | `BuildSettings.tvOS On@2x` | `-2815775797557438328` |
 | ![](Documentation~/icons/small/BuildSettings.tvOS.png) | `BuildSettings.tvOS` | `-2604507406547028008` |
-| ![](Documentation~/icons/small/BuildSettings.tvOS.Small.png) | `BuildSettings.tvOS.Small` | `2324412021468308913` |
 | ![](Documentation~/icons/small/BuildSettings.tvOS.Small@2x.png) | `BuildSettings.tvOS.Small@2x` | `9180157117389547636` |
 | ![](Documentation~/icons/small/BuildSettings.tvOS@2x.png) | `BuildSettings.tvOS@2x` | `-1376627478172224437` |
 | ![](Documentation~/icons/small/BuildSettings.Web.png) | `BuildSettings.Web` | `-8073681927563260479` |
-| ![](Documentation~/icons/small/BuildSettings.Web.Small.png) | `BuildSettings.Web.Small` | `-8502616656149400873` |
 | ![](Documentation~/icons/small/BuildSettings.WebGL%20On.png) | `BuildSettings.WebGL On` | `4781758196249721453` |
 | ![](Documentation~/icons/small/BuildSettings.WebGL%20On@2x.png) | `BuildSettings.WebGL On@2x` | `-6184026389132908262` |
 | ![](Documentation~/icons/small/BuildSettings.WebGL.png) | `BuildSettings.WebGL` | `-4911556789970686505` |
-| ![](Documentation~/icons/small/BuildSettings.WebGL.Small.png) | `BuildSettings.WebGL.Small` | `-3267170773426585699` |
 | ![](Documentation~/icons/small/BuildSettings.WebGL.Small@2x.png) | `BuildSettings.WebGL.Small@2x` | `7777299662375183282` |
 | ![](Documentation~/icons/small/BuildSettings.WebGL@2x.png) | `BuildSettings.WebGL@2x` | `-596689760537875709` |
 | ![](Documentation~/icons/small/BuildSettings.WP8.png) | `BuildSettings.WP8` | `8103707556279304917` |
-| ![](Documentation~/icons/small/BuildSettings.WP8.Small.png) | `BuildSettings.WP8.Small` | `-1021178350218690989` |
 | ![](Documentation~/icons/small/BuildSettings.Xbox360.png) | `BuildSettings.Xbox360` | `-3037193308305438414` |
-| ![](Documentation~/icons/small/BuildSettings.Xbox360.Small.png) | `BuildSettings.Xbox360.Small` | `-1179187124510255440` |
 | ![](Documentation~/icons/small/BuildSettings.XboxOne%20On.png) | `BuildSettings.XboxOne On` | `-6576850163072677896` |
 | ![](Documentation~/icons/small/BuildSettings.XboxOne%20On@2x.png) | `BuildSettings.XboxOne On@2x` | `7572160625161521045` |
 | ![](Documentation~/icons/small/BuildSettings.XboxOne.png) | `BuildSettings.XboxOne` | `5149289017103940624` |
-| ![](Documentation~/icons/small/BuildSettings.XboxOne.Small.png) | `BuildSettings.XboxOne.Small` | `-245827484132217333` |
 | ![](Documentation~/icons/small/BuildSettings.XboxOne.Small@2x.png) | `BuildSettings.XboxOne.Small@2x` | `389319431642934349` |
 | ![](Documentation~/icons/small/BuildSettings.XboxOne@2x.png) | `BuildSettings.XboxOne@2x` | `3546431289802905298` |
 | ![](Documentation~/icons/small/CacheServerConnected.png) | `CacheServerConnected` | `6237473061563373096` |
@@ -397,85 +369,63 @@ You can change script icon by file id
 | ![](Documentation~/icons/small/d_beginButton.png) | `d_beginButton` | `-8634218779858824612` |
 | ![](Documentation~/icons/small/d_blueGroove.png) | `d_blueGroove` | `3958074764286187482` |
 | ![](Documentation~/icons/small/d_BuildSettings.Android.png) | `d_BuildSettings.Android` | `-3446736307351038430` |
-| ![](Documentation~/icons/small/d_BuildSettings.Android.Small.png) | `d_BuildSettings.Android.Small` | `6296815224293940132` |
 | ![](Documentation~/icons/small/d_BuildSettings.Android.Small@2x.png) | `d_BuildSettings.Android.Small@2x` | `-7220358749881951425` |
 | ![](Documentation~/icons/small/d_BuildSettings.Android@2x.png) | `d_BuildSettings.Android@2x` | `-2004670820733268908` |
 | ![](Documentation~/icons/small/d_BuildSettings.Broadcom.png) | `d_BuildSettings.Broadcom` | `-9008726449081888597` |
 | ![](Documentation~/icons/small/d_BuildSettings.DedicatedServer.png) | `d_BuildSettings.DedicatedServer` | `2578505128784497995` |
-| ![](Documentation~/icons/small/d_BuildSettings.DedicatedServer.Small.png) | `d_BuildSettings.DedicatedServer.Small` | `-2134664407540065926` |
 | ![](Documentation~/icons/small/d_BuildSettings.DedicatedServer.Small@2x.png) | `d_BuildSettings.DedicatedServer.Small@2x` | `3327166165389737355` |
 | ![](Documentation~/icons/small/d_BuildSettings.DedicatedServer@2x.png) | `d_BuildSettings.DedicatedServer@2x` | `5944582379227412270` |
 | ![](Documentation~/icons/small/d_BuildSettings.Facebook.png) | `d_BuildSettings.Facebook` | `4036877365744175712` |
-| ![](Documentation~/icons/small/d_BuildSettings.Facebook.Small.png) | `d_BuildSettings.Facebook.Small` | `-1773235622925870077` |
 | ![](Documentation~/icons/small/d_BuildSettings.Facebook.Small@2x.png) | `d_BuildSettings.Facebook.Small@2x` | `-1523609404782003456` |
 | ![](Documentation~/icons/small/d_BuildSettings.Facebook@2x.png) | `d_BuildSettings.Facebook@2x` | `1063348289580890539` |
 | ![](Documentation~/icons/small/d_BuildSettings.FlashPlayer.png) | `d_BuildSettings.FlashPlayer` | `-2305605046842453662` |
-| ![](Documentation~/icons/small/d_BuildSettings.FlashPlayer.Small.png) | `d_BuildSettings.FlashPlayer.Small` | `731514638995218830` |
 | ![](Documentation~/icons/small/d_BuildSettings.GameCoreScarlett.png) | `d_BuildSettings.GameCoreScarlett` | `-5955308897697106432` |
-| ![](Documentation~/icons/small/d_BuildSettings.GameCoreScarlett.Small.png) | `d_BuildSettings.GameCoreScarlett.Small` | `-6652521207947470784` |
 | ![](Documentation~/icons/small/d_BuildSettings.GameCoreScarlett.Small@2x.png) | `d_BuildSettings.GameCoreScarlett.Small@2x` | `-6995364089635719962` |
 | ![](Documentation~/icons/small/d_BuildSettings.GameCoreScarlett@2x.png) | `d_BuildSettings.GameCoreScarlett@2x` | `-1108914255804725048` |
 | ![](Documentation~/icons/small/d_BuildSettings.GameCoreXboxOne.png) | `d_BuildSettings.GameCoreXboxOne` | `-832438869913387760` |
-| ![](Documentation~/icons/small/d_BuildSettings.GameCoreXboxOne.Small.png) | `d_BuildSettings.GameCoreXboxOne.Small` | `1014862496525268134` |
 | ![](Documentation~/icons/small/d_BuildSettings.GameCoreXboxOne.Small@2x.png) | `d_BuildSettings.GameCoreXboxOne.Small@2x` | `5323906888130457667` |
 | ![](Documentation~/icons/small/d_BuildSettings.GameCoreXboxOne@2x.png) | `d_BuildSettings.GameCoreXboxOne@2x` | `-8240390544447176125` |
 | ![](Documentation~/icons/small/d_BuildSettings.iPhone.png) | `d_BuildSettings.iPhone` | `-6259517079827926906` |
-| ![](Documentation~/icons/small/d_BuildSettings.iPhone.Small.png) | `d_BuildSettings.iPhone.Small` | `-1080992744858828460` |
 | ![](Documentation~/icons/small/d_BuildSettings.iPhone.Small@2x.png) | `d_BuildSettings.iPhone.Small@2x` | `4152198871333242844` |
 | ![](Documentation~/icons/small/d_BuildSettings.iPhone@2x.png) | `d_BuildSettings.iPhone@2x` | `-8260825193331817229` |
 | ![](Documentation~/icons/small/d_BuildSettings.Lumin.png) | `d_BuildSettings.Lumin` | `6535942805984192183` |
-| ![](Documentation~/icons/small/d_BuildSettings.Lumin.small.png) | `d_BuildSettings.Lumin.small` | `-2841579067038442323` |
 | ![](Documentation~/icons/small/d_BuildSettings.Lumin.small@2x.png) | `d_BuildSettings.Lumin.small@2x` | `2381741023756229166` |
 | ![](Documentation~/icons/small/d_BuildSettings.Lumin@2x.png) | `d_BuildSettings.Lumin@2x` | `-1524415034251050656` |
 | ![](Documentation~/icons/small/d_BuildSettings.Metro.png) | `d_BuildSettings.Metro` | `3599409261634019790` |
-| ![](Documentation~/icons/small/d_BuildSettings.Metro.Small.png) | `d_BuildSettings.Metro.Small` | `1784067418094738445` |
 | ![](Documentation~/icons/small/d_BuildSettings.Metro.Small@2x.png) | `d_BuildSettings.Metro.Small@2x` | `-1497910192269226091` |
 | ![](Documentation~/icons/small/d_BuildSettings.Metro@2x.png) | `d_BuildSettings.Metro@2x` | `889119860637441237` |
 | ![](Documentation~/icons/small/d_BuildSettings.N3DS.png) | `d_BuildSettings.N3DS` | `1548403576493293022` |
-| ![](Documentation~/icons/small/d_BuildSettings.N3DS.Small.png) | `d_BuildSettings.N3DS.Small` | `5168174702038070723` |
 | ![](Documentation~/icons/small/d_BuildSettings.N3DS.Small@2x.png) | `d_BuildSettings.N3DS.Small@2x` | `-8843039746199640544` |
 | ![](Documentation~/icons/small/d_BuildSettings.N3DS@2x.png) | `d_BuildSettings.N3DS@2x` | `-6180537394732015050` |
 | ![](Documentation~/icons/small/d_BuildSettings.PS4.png) | `d_BuildSettings.PS4` | `9035645644763246296` |
-| ![](Documentation~/icons/small/d_BuildSettings.PS4.Small.png) | `d_BuildSettings.PS4.Small` | `-1326778436304736038` |
 | ![](Documentation~/icons/small/d_BuildSettings.PS4.Small@2x.png) | `d_BuildSettings.PS4.Small@2x` | `-8641487154673754581` |
 | ![](Documentation~/icons/small/d_BuildSettings.PS4@2x.png) | `d_BuildSettings.PS4@2x` | `4572901898994548769` |
 | ![](Documentation~/icons/small/d_BuildSettings.PS5.png) | `d_BuildSettings.PS5` | `-5292037846748931880` |
-| ![](Documentation~/icons/small/d_BuildSettings.PS5.Small.png) | `d_BuildSettings.PS5.Small` | `4660124725284368101` |
 | ![](Documentation~/icons/small/d_BuildSettings.PS5.Small@2x.png) | `d_BuildSettings.PS5.Small@2x` | `5350496758064582428` |
 | ![](Documentation~/icons/small/d_BuildSettings.PS5@2x.png) | `d_BuildSettings.PS5@2x` | `-4374360490385192044` |
 | ![](Documentation~/icons/small/d_BuildSettings.PSP2.png) | `d_BuildSettings.PSP2` | `672497611671670674` |
-| ![](Documentation~/icons/small/d_BuildSettings.PSP2.Small.png) | `d_BuildSettings.PSP2.Small` | `-5490013650174253100` |
 | ![](Documentation~/icons/small/d_BuildSettings.SelectedIcon.png) | `d_BuildSettings.SelectedIcon` | `-5638162169307524054` |
 | ![](Documentation~/icons/small/d_BuildSettings.Stadia.png) | `d_BuildSettings.Stadia` | `41120884009361448` |
-| ![](Documentation~/icons/small/d_BuildSettings.Stadia.Small.png) | `d_BuildSettings.Stadia.Small` | `6365604532169879272` |
 | ![](Documentation~/icons/small/d_BuildSettings.Stadia.Small@2x.png) | `d_BuildSettings.Stadia.Small@2x` | `-2916328454764905165` |
 | ![](Documentation~/icons/small/d_BuildSettings.Stadia@2x.png) | `d_BuildSettings.Stadia@2x` | `-683160021736784701` |
 | ![](Documentation~/icons/small/d_BuildSettings.Standalone.png) | `d_BuildSettings.Standalone` | `-3581297997062639961` |
-| ![](Documentation~/icons/small/d_BuildSettings.Standalone.Small.png) | `d_BuildSettings.Standalone.Small` | `382013416940812573` |
 | ![](Documentation~/icons/small/d_BuildSettings.Standalone.Small@2x.png) | `d_BuildSettings.Standalone.Small@2x` | `-2129607575182838650` |
 | ![](Documentation~/icons/small/d_BuildSettings.Standalone@2x.png) | `d_BuildSettings.Standalone@2x` | `-1770062895102740351` |
 | ![](Documentation~/icons/small/d_BuildSettings.Switch.png) | `d_BuildSettings.Switch` | `-6585269640543235773` |
-| ![](Documentation~/icons/small/d_BuildSettings.Switch.Small.png) | `d_BuildSettings.Switch.Small` | `2920198948148501075` |
 | ![](Documentation~/icons/small/d_BuildSettings.Switch.Small@2x.png) | `d_BuildSettings.Switch.Small@2x` | `6822354511494598398` |
 | ![](Documentation~/icons/small/d_BuildSettings.Switch@2x.png) | `d_BuildSettings.Switch@2x` | `-1125836962778702150` |
 | ![](Documentation~/icons/small/d_BuildSettings.tvOS.png) | `d_BuildSettings.tvOS` | `3261360856959884992` |
-| ![](Documentation~/icons/small/d_BuildSettings.tvOS.Small.png) | `d_BuildSettings.tvOS.Small` | `-4229590885225958408` |
 | ![](Documentation~/icons/small/d_BuildSettings.tvOS.Small@2x.png) | `d_BuildSettings.tvOS.Small@2x` | `-7889761708514874415` |
 | ![](Documentation~/icons/small/d_BuildSettings.tvOS@2x.png) | `d_BuildSettings.tvOS@2x` | `9036554527568043497` |
 | ![](Documentation~/icons/small/d_BuildSettings.Web.png) | `d_BuildSettings.Web` | `169656382621208501` |
-| ![](Documentation~/icons/small/d_BuildSettings.Web.Small.png) | `d_BuildSettings.Web.Small` | `-3074397474341108136` |
 | ![](Documentation~/icons/small/d_BuildSettings.WebGL.png) | `d_BuildSettings.WebGL` | `-4805328497058567814` |
-| ![](Documentation~/icons/small/d_BuildSettings.WebGL.Small.png) | `d_BuildSettings.WebGL.Small` | `3315521960194682417` |
 | ![](Documentation~/icons/small/d_BuildSettings.WebGL.Small@2x.png) | `d_BuildSettings.WebGL.Small@2x` | `-3349758287006924090` |
 | ![](Documentation~/icons/small/d_BuildSettings.WebGL@2x.png) | `d_BuildSettings.WebGL@2x` | `-6900537904881935172` |
 | ![](Documentation~/icons/small/d_BuildSettings.Xbox360.png) | `d_BuildSettings.Xbox360` | `-2043457658809275335` |
-| ![](Documentation~/icons/small/d_BuildSettings.Xbox360.Small.png) | `d_BuildSettings.Xbox360.Small` | `3510589587984622768` |
 | ![](Documentation~/icons/small/d_BuildSettings.XboxOne.png) | `d_BuildSettings.XboxOne` | `8529469165666183730` |
-| ![](Documentation~/icons/small/d_BuildSettings.XboxOne.Small.png) | `d_BuildSettings.XboxOne.Small` | `8220482464425789369` |
 | ![](Documentation~/icons/small/d_BuildSettings.XboxOne.Small@2x.png) | `d_BuildSettings.XboxOne.Small@2x` | `-2957719757152438512` |
 | ![](Documentation~/icons/small/d_BuildSettings.XboxOne@2x.png) | `d_BuildSettings.XboxOne@2x` | `2654908836672212704` |
 | ![](Documentation~/icons/small/d_BuildSettings.Xiaomi.png) | `d_BuildSettings.Xiaomi` | `-6144129136269295938` |
-| ![](Documentation~/icons/small/d_BuildSettings.Xiaomi.Small.png) | `d_BuildSettings.Xiaomi.Small` | `3928405084570541427` |
 | ![](Documentation~/icons/small/d_BuildSettings.Xiaomi.Small@2x.png) | `d_BuildSettings.Xiaomi.Small@2x` | `4005156709013535498` |
 | ![](Documentation~/icons/small/d_BuildSettings.Xiaomi@2x.png) | `d_BuildSettings.Xiaomi@2x` | `3805764193246990354` |
 | ![](Documentation~/icons/small/d_CacheServerConnected.png) | `d_CacheServerConnected` | `-3709775289237028813` |
