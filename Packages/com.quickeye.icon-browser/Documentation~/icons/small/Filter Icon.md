@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Filter Icon.png) | `Filter Icon` | `-6292024651731497822` |
+| ![](Filter%20Icon.png) | `Filter Icon` | `-6292024651731497822` |

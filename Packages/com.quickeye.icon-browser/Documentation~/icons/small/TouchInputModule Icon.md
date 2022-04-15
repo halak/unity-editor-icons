@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](TouchInputModule Icon.png) | `TouchInputModule Icon` | `-8184303886447460516` |
+| ![](TouchInputModule%20Icon.png) | `TouchInputModule Icon` | `-8184303886447460516` |

@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](ScriptableObject On Icon.png) | `ScriptableObject On Icon` | `-335226744064694903` |
+| ![](ScriptableObject%20On%20Icon.png) | `ScriptableObject On Icon` | `-335226744064694903` |

@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Terrain Icon.png) | `Terrain Icon` | `3099466108739435423` |
+| ![](Terrain%20Icon.png) | `Terrain Icon` | `3099466108739435423` |

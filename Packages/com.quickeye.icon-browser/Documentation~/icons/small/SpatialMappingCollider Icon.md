@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](SpatialMappingCollider Icon.png) | `SpatialMappingCollider Icon` | `-2746038756767647376` |
+| ![](SpatialMappingCollider%20Icon.png) | `SpatialMappingCollider Icon` | `-2746038756767647376` |

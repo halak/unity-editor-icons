@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](NetworkLobbyManager Icon.png) | `NetworkLobbyManager Icon` | `2503657223658808397` |
+| ![](NetworkLobbyManager%20Icon.png) | `NetworkLobbyManager Icon` | `2503657223658808397` |

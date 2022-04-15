@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](NetworkProximityChecker Icon.png) | `NetworkProximityChecker Icon` | `-3855380401853643883` |
+| ![](NetworkProximityChecker%20Icon.png) | `NetworkProximityChecker Icon` | `-3855380401853643883` |

@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](AssetStore Icon.png) | `AssetStore Icon` | `6635635470466451846` |
+| ![](AssetStore%20Icon.png) | `AssetStore Icon` | `6635635470466451846` |

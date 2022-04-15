@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Folder Icon.png) | `Folder Icon` | `-1463847995985908582` |
+| ![](Folder%20Icon.png) | `Folder Icon` | `-1463847995985908582` |

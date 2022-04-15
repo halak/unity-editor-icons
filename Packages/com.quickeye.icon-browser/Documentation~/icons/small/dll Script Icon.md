@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](dll Script Icon.png) | `dll Script Icon` | `-7543127908959577191` |
+| ![](dll%20Script%20Icon.png) | `dll Script Icon` | `-7543127908959577191` |

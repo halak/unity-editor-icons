@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Rigidbody Icon.png) | `Rigidbody Icon` | `5326581857693104265` |
+| ![](Rigidbody%20Icon.png) | `Rigidbody Icon` | `5326581857693104265` |

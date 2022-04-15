@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](SceneAsset On Icon.png) | `SceneAsset On Icon` | `4633537267211664313` |
+| ![](SceneAsset%20On%20Icon.png) | `SceneAsset On Icon` | `4633537267211664313` |

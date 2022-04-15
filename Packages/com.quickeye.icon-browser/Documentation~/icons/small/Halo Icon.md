@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Halo Icon.png) | `Halo Icon` | `-7825213776457033889` |
+| ![](Halo%20Icon.png) | `Halo Icon` | `-7825213776457033889` |

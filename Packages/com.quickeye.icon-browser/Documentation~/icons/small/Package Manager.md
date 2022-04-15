@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Package Manager.png) | `Package Manager` | `2532104554704294423` |
+| ![](Package%20Manager.png) | `Package Manager` | `2532104554704294423` |

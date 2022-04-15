@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](SpriteAtlasImporter Icon.png) | `SpriteAtlasImporter Icon` | `-7646251099529493452` |
+| ![](SpriteAtlasImporter%20Icon.png) | `SpriteAtlasImporter Icon` | `-7646251099529493452` |

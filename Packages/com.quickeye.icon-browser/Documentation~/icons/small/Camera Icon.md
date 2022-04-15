@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Camera Icon.png) | `Camera Icon` | `6338563257489195420` |
+| ![](Camera%20Icon.png) | `Camera Icon` | `6338563257489195420` |

@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](ViewToolMove On.png) | `ViewToolMove On` | `-7374773410288620344` |
+| ![](ViewToolMove%20On.png) | `ViewToolMove On` | `-7374773410288620344` |

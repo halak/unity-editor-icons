@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](TerrainInspector.TerrainToolPlantsAlt On.png) | `TerrainInspector.TerrainToolPlantsAlt On` | `1031813628663945415` |
+| ![](TerrainInspector.TerrainToolPlantsAlt%20On.png) | `TerrainInspector.TerrainToolPlantsAlt On` | `1031813628663945415` |

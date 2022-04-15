@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](ContentSizeFitter Icon.png) | `ContentSizeFitter Icon` | `-385548011631775140` |
+| ![](ContentSizeFitter%20Icon.png) | `ContentSizeFitter Icon` | `-385548011631775140` |

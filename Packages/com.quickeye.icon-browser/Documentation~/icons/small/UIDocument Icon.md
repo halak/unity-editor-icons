@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](UIDocument Icon.png) | `UIDocument Icon` | `988104714312075573` |
+| ![](UIDocument%20Icon.png) | `UIDocument Icon` | `988104714312075573` |

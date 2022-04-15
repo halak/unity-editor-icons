@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Image Icon.png) | `Image Icon` | `442822075502377251` |
+| ![](Image%20Icon.png) | `Image Icon` | `442822075502377251` |

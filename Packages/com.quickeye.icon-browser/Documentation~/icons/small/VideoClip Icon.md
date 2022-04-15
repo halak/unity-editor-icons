@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](VideoClip Icon.png) | `VideoClip Icon` | `-8462782666828804213` |
+| ![](VideoClip%20Icon.png) | `VideoClip Icon` | `-8462782666828804213` |

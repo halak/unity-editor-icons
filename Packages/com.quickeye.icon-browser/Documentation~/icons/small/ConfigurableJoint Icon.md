@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](ConfigurableJoint Icon.png) | `ConfigurableJoint Icon` | `4991140454903510664` |
+| ![](ConfigurableJoint%20Icon.png) | `ConfigurableJoint Icon` | `4991140454903510664` |

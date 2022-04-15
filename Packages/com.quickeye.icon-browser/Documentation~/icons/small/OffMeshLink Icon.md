@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](OffMeshLink Icon.png) | `OffMeshLink Icon` | `8983077705596183227` |
+| ![](OffMeshLink%20Icon.png) | `OffMeshLink Icon` | `8983077705596183227` |

@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](MuscleClip Icon.png) | `MuscleClip Icon` | `-10527802030364122` |
+| ![](MuscleClip%20Icon.png) | `MuscleClip Icon` | `-10527802030364122` |

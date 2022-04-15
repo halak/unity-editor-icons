@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](MeshRenderer Icon.png) | `MeshRenderer Icon` | `4397238243149536692` |
+| ![](MeshRenderer%20Icon.png) | `MeshRenderer Icon` | `4397238243149536692` |

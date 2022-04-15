@@ -65,7 +65,7 @@ namespace QuickEye.Editor.IconWindow
         private static string GetIconInfoTemplate(string iconPath,string iconName,string fileId)
         {
             var template = Resources.Load<TextAsset>("IconInfoTemplate").text;
-            template = template.Replace("<ICON PATH>", iconPath);
+            template = template.Replace("<ICON PATH>", EscapeUrl(iconPath));
             template = template.Replace("<ICON NAME>", iconName);
             template = template.Replace("<ICON FILEID>", fileId);
             return template;

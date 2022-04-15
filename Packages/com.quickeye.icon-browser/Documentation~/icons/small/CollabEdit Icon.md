@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](CollabEdit Icon.png) | `CollabEdit Icon` | `6085536064946281551` |
+| ![](CollabEdit%20Icon.png) | `CollabEdit Icon` | `6085536064946281551` |

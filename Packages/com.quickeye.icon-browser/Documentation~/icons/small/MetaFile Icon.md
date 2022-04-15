@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](MetaFile Icon.png) | `MetaFile Icon` | `4439639508505168805` |
+| ![](MetaFile%20Icon.png) | `MetaFile Icon` | `4439639508505168805` |

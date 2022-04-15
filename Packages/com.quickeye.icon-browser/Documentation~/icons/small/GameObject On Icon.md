@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](GameObject On Icon.png) | `GameObject On Icon` | `-2214521050582775001` |
+| ![](GameObject%20On%20Icon.png) | `GameObject On Icon` | `-2214521050582775001` |

@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](PrefabOverlayRemoved Icon.png) | `PrefabOverlayRemoved Icon` | `-3867367055818222277` |
+| ![](PrefabOverlayRemoved%20Icon.png) | `PrefabOverlayRemoved Icon` | `-3867367055818222277` |

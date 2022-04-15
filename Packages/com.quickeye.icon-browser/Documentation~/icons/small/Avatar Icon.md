@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Avatar Icon.png) | `Avatar Icon` | `-1841772380485182325` |
+| ![](Avatar%20Icon.png) | `Avatar Icon` | `-1841772380485182325` |

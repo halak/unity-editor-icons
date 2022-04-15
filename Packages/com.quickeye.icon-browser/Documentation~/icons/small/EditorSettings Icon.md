@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](EditorSettings Icon.png) | `EditorSettings Icon` | `555089729179892492` |
+| ![](EditorSettings%20Icon.png) | `EditorSettings Icon` | `555089729179892492` |

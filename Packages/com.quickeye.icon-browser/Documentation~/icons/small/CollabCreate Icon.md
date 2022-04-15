@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](CollabCreate Icon.png) | `CollabCreate Icon` | `-2372696830806711602` |
+| ![](CollabCreate%20Icon.png) | `CollabCreate Icon` | `-2372696830806711602` |

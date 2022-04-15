@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](InputField Icon.png) | `InputField Icon` | `3823979315032016401` |
+| ![](InputField%20Icon.png) | `InputField Icon` | `3823979315032016401` |

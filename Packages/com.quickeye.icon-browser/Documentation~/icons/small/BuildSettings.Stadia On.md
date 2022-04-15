@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](BuildSettings.Stadia On.png) | `BuildSettings.Stadia On` | `-583410931937435233` |
+| ![](BuildSettings.Stadia%20On.png) | `BuildSettings.Stadia On` | `-583410931937435233` |

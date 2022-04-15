@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Skybox Icon.png) | `Skybox Icon` | `8976915229514748513` |
+| ![](Skybox%20Icon.png) | `Skybox Icon` | `8976915229514748513` |

@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](LensFlare Icon.png) | `LensFlare Icon` | `7794051059240042548` |
+| ![](LensFlare%20Icon.png) | `LensFlare Icon` | `7794051059240042548` |

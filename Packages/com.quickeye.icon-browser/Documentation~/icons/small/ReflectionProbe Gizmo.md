@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](ReflectionProbe Gizmo.png) | `ReflectionProbe Gizmo` | `-2889492238381746287` |
+| ![](ReflectionProbe%20Gizmo.png) | `ReflectionProbe Gizmo` | `-2889492238381746287` |

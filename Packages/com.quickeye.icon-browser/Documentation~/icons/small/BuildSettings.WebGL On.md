@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](BuildSettings.WebGL On.png) | `BuildSettings.WebGL On` | `4781758196249721453` |
+| ![](BuildSettings.WebGL%20On.png) | `BuildSettings.WebGL On` | `4781758196249721453` |

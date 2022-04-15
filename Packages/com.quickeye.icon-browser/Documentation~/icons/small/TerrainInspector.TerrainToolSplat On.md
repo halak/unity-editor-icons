@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](TerrainInspector.TerrainToolSplat On.png) | `TerrainInspector.TerrainToolSplat On` | `-7624083770623325932` |
+| ![](TerrainInspector.TerrainToolSplat%20On.png) | `TerrainInspector.TerrainToolSplat On` | `-7624083770623325932` |

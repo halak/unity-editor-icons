@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](TextMesh Icon.png) | `TextMesh Icon` | `5246181342486455390` |
+| ![](TextMesh%20Icon.png) | `TextMesh Icon` | `5246181342486455390` |

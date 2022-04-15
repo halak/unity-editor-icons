@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](MoveTool on.png) | `MoveTool on` | `-2322508416891747092` |
+| ![](MoveTool%20on.png) | `MoveTool on` | `-2322508416891747092` |

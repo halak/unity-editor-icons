@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Mask Icon.png) | `Mask Icon` | `-5557649324293814156` |
+| ![](Mask%20Icon.png) | `Mask Icon` | `-5557649324293814156` |

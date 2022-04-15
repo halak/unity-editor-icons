@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](LayoutElement Icon.png) | `LayoutElement Icon` | `7518471575754125003` |
+| ![](LayoutElement%20Icon.png) | `LayoutElement Icon` | `7518471575754125003` |

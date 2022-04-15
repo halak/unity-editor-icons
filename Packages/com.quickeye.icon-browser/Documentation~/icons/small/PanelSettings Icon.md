@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](PanelSettings Icon.png) | `PanelSettings Icon` | `-7740402879210975047` |
+| ![](PanelSettings%20Icon.png) | `PanelSettings Icon` | `-7740402879210975047` |

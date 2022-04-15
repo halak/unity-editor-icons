@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Scrollbar Icon.png) | `Scrollbar Icon` | `-423515050303474391` |
+| ![](Scrollbar%20Icon.png) | `Scrollbar Icon` | `-423515050303474391` |

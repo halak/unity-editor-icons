@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](OcclusionPortal Icon.png) | `OcclusionPortal Icon` | `-5782365924120474625` |
+| ![](OcclusionPortal%20Icon.png) | `OcclusionPortal Icon` | `-5782365924120474625` |

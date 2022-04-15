@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](LightingDataAssetParent Icon.png) | `LightingDataAssetParent Icon` | `-7437585863220954093` |
+| ![](LightingDataAssetParent%20Icon.png) | `LightingDataAssetParent Icon` | `-7437585863220954093` |

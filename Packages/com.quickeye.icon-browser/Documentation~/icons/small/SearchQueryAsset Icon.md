@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](SearchQueryAsset Icon.png) | `SearchQueryAsset Icon` | `-4429863685609879072` |
+| ![](SearchQueryAsset%20Icon.png) | `SearchQueryAsset Icon` | `-4429863685609879072` |

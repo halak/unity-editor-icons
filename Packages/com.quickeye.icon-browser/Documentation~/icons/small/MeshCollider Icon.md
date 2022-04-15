@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](MeshCollider Icon.png) | `MeshCollider Icon` | `5751836871710099725` |
+| ![](MeshCollider%20Icon.png) | `MeshCollider Icon` | `5751836871710099725` |

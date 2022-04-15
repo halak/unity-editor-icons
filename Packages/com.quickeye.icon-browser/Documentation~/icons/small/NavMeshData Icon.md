@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](NavMeshData Icon.png) | `NavMeshData Icon` | `6619040034916734573` |
+| ![](NavMeshData%20Icon.png) | `NavMeshData Icon` | `6619040034916734573` |

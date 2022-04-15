@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Toolbar Plus More.png) | `Toolbar Plus More` | `2438583746582323504` |
+| ![](Toolbar%20Plus%20More.png) | `Toolbar Plus More` | `2438583746582323504` |

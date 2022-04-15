@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](RayTracingShader Icon.png) | `RayTracingShader Icon` | `-4615260312705550583` |
+| ![](RayTracingShader%20Icon.png) | `RayTracingShader Icon` | `-4615260312705550583` |

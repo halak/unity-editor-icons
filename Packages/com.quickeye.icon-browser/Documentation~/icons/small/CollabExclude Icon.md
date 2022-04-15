@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](CollabExclude Icon.png) | `CollabExclude Icon` | `4174785850088061828` |
+| ![](CollabExclude%20Icon.png) | `CollabExclude Icon` | `4174785850088061828` |

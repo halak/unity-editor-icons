@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](PrefabModel Icon.png) | `PrefabModel Icon` | `2654186429131687520` |
+| ![](PrefabModel%20Icon.png) | `PrefabModel Icon` | `2654186429131687520` |

@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](SyncSearch On.png) | `SyncSearch On` | `-7292867992887997717` |
+| ![](SyncSearch%20On.png) | `SyncSearch On` | `-7292867992887997717` |

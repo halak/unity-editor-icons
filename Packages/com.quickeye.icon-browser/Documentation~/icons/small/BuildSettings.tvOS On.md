@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](BuildSettings.tvOS On.png) | `BuildSettings.tvOS On` | `-1883590773550481976` |
+| ![](BuildSettings.tvOS%20On.png) | `BuildSettings.tvOS On` | `-1883590773550481976` |

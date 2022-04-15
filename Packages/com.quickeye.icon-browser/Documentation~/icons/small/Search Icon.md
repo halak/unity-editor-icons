@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](Search Icon.png) | `Search Icon` | `-8633937305663748817` |
+| ![](Search%20Icon.png) | `Search Icon` | `-8633937305663748817` |

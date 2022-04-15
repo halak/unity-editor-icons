@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](VisualEffect Gizmo.png) | `VisualEffect Gizmo` | `2220025264489876575` |
+| ![](VisualEffect%20Gizmo.png) | `VisualEffect Gizmo` | `2220025264489876575` |

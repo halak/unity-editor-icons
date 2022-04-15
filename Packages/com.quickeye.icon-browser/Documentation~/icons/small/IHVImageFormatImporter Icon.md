@@ -1,3 +1,3 @@
 | Icon | Name | File ID |
 | ---  | ---  | ---     |
-| ![](IHVImageFormatImporter Icon.png) | `IHVImageFormatImporter Icon` | `-3345001512857149683` |
+| ![](IHVImageFormatImporter%20Icon.png) | `IHVImageFormatImporter Icon` | `-3345001512857149683` |
