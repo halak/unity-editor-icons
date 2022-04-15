@@ -1,5 +1,5 @@
 # Unity Editor Icon Browser
-![Window/Icon Browser](Documentation~/ToolImage.png)
+<p align="center"><img  src="Documentation~/ToolImage.png" width="50%"></p>
 
 ## Instalation
 Supported Unity 2019.4+
